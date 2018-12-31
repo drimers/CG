@@ -65,11 +65,11 @@ namespace Draw
             int x = rnd.Next(100, 1000);
             int y = rnd.Next(100, 600);
 
-            RectangleShape rect = new RectangleShape(new Rectangle(x, y, 100, 200));
-            rect.FillColor = Color.White;
-            rect.BorderColor = Color.Green;
+            RectangleShape rectangle = new RectangleShape(new Rectangle(x, y, 100, 200));
 
-            ShapeList.Add(rect);
+            rectangle.FillColor = Color.White;
+            rectangle.BorderColor = Color.Green;
+            ShapeList.Add(rectangle);
         }
 
 
@@ -118,11 +118,11 @@ namespace Draw
             int x = rnd.Next(100, 1000);
             int y = rnd.Next(100, 600);
 
-            EllipseShape elp = new EllipseShape(new Rectangle(x, y, 200, 100));
-            elp.FillColor = Color.White;
-            elp.BorderColor = Color.Green;
+            EllipseShape ellipse = new EllipseShape(new Rectangle(x, y, 200, 100));
 
-            ShapeList.Add(elp);
+            ellipse.FillColor = Color.White;
+            ellipse.BorderColor = Color.Green;
+            ShapeList.Add(ellipse);
 
         }
 
@@ -135,15 +135,11 @@ namespace Draw
             int x = rnd.Next(100, 1000);
             int y = rnd.Next(100, 600);
 
-            //  TriangleShape elp = new TriangleShape(new Rectangle(x, y, 200, 100));
-            SquareShape squ = new SquareShape(new Rectangle(x, y, 200, 200));
+            SquareShape square = new SquareShape(new Rectangle(x, y, 200, 200));
 
-
-
-            squ.FillColor = Color.Yellow;
-            squ.BorderColor = Color.Red;
-
-            ShapeList.Add(squ);
+            square.FillColor = Color.Yellow;
+            square.BorderColor = Color.Red;
+            ShapeList.Add(square);
 
         }
 
@@ -154,15 +150,11 @@ namespace Draw
             int x = rnd.Next(100, 1000);
             int y = rnd.Next(100, 600);
 
-            //  TriangleShape elp = new TriangleShape(new Rectangle(x, y, 200, 100));
-            CircleShape cir = new CircleShape(new Rectangle(x, y, 200, 200));
+            CircleShape circle = new CircleShape(new Rectangle(x, y, 200, 200));
 
-
-
-            cir.FillColor = Color.DarkCyan;
-            cir.BorderColor = Color.LimeGreen;
-
-            ShapeList.Add(cir);
+            circle.FillColor = Color.DarkCyan;
+            circle.BorderColor = Color.LimeGreen;
+            ShapeList.Add(circle);
 
         }
 
@@ -179,7 +171,7 @@ namespace Draw
             // int z = rnd.Next(300, 800);
 
             //  TriangleShape elp = new TriangleShape(new Rectangle(x, y, 200, 100));
-            TriangleShape tri = new TriangleShape(new Rectangle(x, y, 300, 150));
+            TriangleShape triangle = new TriangleShape(new Rectangle(x, y, 300, 150));
             //TriangleShape tri = new TriangleShape(new Rectangle(x, y, 200, 100));
             // Point[] points = { new Point(x), new Point(y), new Point(z) };
             // Rectangle rectangle = new Rectangle(x, y, 100, 100);
@@ -197,10 +189,9 @@ namespace Draw
             //});
             //    return ShapeList;
 
-            tri.FillColor = Color.Lime;
-            tri.BorderColor = Color.Red;
-
-            ShapeList.Add(tri);
+            triangle.FillColor = Color.Lime;
+            triangle.BorderColor = Color.Red;
+            ShapeList.Add(triangle);
 
         }
 
