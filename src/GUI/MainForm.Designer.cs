@@ -41,6 +41,11 @@
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rectangleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ellipseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.circleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.triangleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.squareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar = new System.Windows.Forms.StatusStrip();
@@ -67,12 +72,7 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.circleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewPort = new Draw.DoubleBufferedPanel();
-            this.triangleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.squareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.speedMenu.SuspendLayout();
@@ -88,7 +88,7 @@
             this.helpToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(693, 24);
+            this.mainMenu.Size = new System.Drawing.Size(981, 24);
             this.mainMenu.TabIndex = 1;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -148,14 +148,14 @@
             this.triangleToolStripMenuItem,
             this.squareToolStripMenuItem});
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.createToolStripMenuItem.Text = "Create";
             // 
             // rectangleToolStripMenuItem
             // 
             this.rectangleToolStripMenuItem.Name = "rectangleToolStripMenuItem";
             this.rectangleToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.rectangleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rectangleToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.rectangleToolStripMenuItem.Text = "Rectangle";
             this.rectangleToolStripMenuItem.Click += new System.EventHandler(this.DrawRectangleSpeedButtonClick);
             // 
@@ -163,9 +163,49 @@
             // 
             this.ellipseToolStripMenuItem.Name = "ellipseToolStripMenuItem";
             this.ellipseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.ellipseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ellipseToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.ellipseToolStripMenuItem.Text = "Ellipse";
             this.ellipseToolStripMenuItem.Click += new System.EventHandler(this.DrawEllipsTeSpeedButtonClick);
+            // 
+            // circleToolStripMenuItem
+            // 
+            this.circleToolStripMenuItem.Name = "circleToolStripMenuItem";
+            this.circleToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.circleToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.circleToolStripMenuItem.Text = "Circle";
+            this.circleToolStripMenuItem.Click += new System.EventHandler(this.Circle_Click);
+            // 
+            // triangleToolStripMenuItem
+            // 
+            this.triangleToolStripMenuItem.Name = "triangleToolStripMenuItem";
+            this.triangleToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.triangleToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.triangleToolStripMenuItem.Text = "Triangle";
+            this.triangleToolStripMenuItem.Click += new System.EventHandler(this.Triangle_Click);
+            // 
+            // squareToolStripMenuItem
+            // 
+            this.squareToolStripMenuItem.Name = "squareToolStripMenuItem";
+            this.squareToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.squareToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.squareToolStripMenuItem.Text = "Square";
+            this.squareToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteAllToolStripMenuItem});
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            // 
+            // deleteAllToolStripMenuItem
+            // 
+            this.deleteAllToolStripMenuItem.Name = "deleteAllToolStripMenuItem";
+            this.deleteAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
+            this.deleteAllToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.deleteAllToolStripMenuItem.Text = "DeleteAll";
+            this.deleteAllToolStripMenuItem.Click += new System.EventHandler(this.DeleteAll_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -185,9 +225,9 @@
             // 
             this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.currentStatusLabel});
-            this.statusBar.Location = new System.Drawing.Point(0, 401);
+            this.statusBar.Location = new System.Drawing.Point(0, 698);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(693, 22);
+            this.statusBar.Size = new System.Drawing.Size(981, 22);
             this.statusBar.TabIndex = 2;
             this.statusBar.Text = "statusStrip1";
             // 
@@ -198,6 +238,7 @@
             // 
             // speedMenu
             // 
+            this.speedMenu.ImageScalingSize = new System.Drawing.Size(25, 25);
             this.speedMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pickUpSpeedButton,
             this.toolStripSeparator2,
@@ -220,7 +261,7 @@
             this.toolStripSeparator5});
             this.speedMenu.Location = new System.Drawing.Point(0, 24);
             this.speedMenu.Name = "speedMenu";
-            this.speedMenu.Size = new System.Drawing.Size(693, 25);
+            this.speedMenu.Size = new System.Drawing.Size(981, 25);
             this.speedMenu.TabIndex = 3;
             this.speedMenu.Text = "toolStrip1";
             // 
@@ -381,63 +422,23 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
-            // circleToolStripMenuItem
-            // 
-            this.circleToolStripMenuItem.Name = "circleToolStripMenuItem";
-            this.circleToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.circleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.circleToolStripMenuItem.Text = "Circle";
-            this.circleToolStripMenuItem.Click += new System.EventHandler(this.Circle_Click);
-            // 
             // viewPort
             // 
             this.viewPort.Dock = System.Windows.Forms.DockStyle.Fill;
             this.viewPort.Location = new System.Drawing.Point(0, 49);
             this.viewPort.Name = "viewPort";
-            this.viewPort.Size = new System.Drawing.Size(693, 352);
+            this.viewPort.Size = new System.Drawing.Size(981, 649);
             this.viewPort.TabIndex = 4;
             this.viewPort.Paint += new System.Windows.Forms.PaintEventHandler(this.ViewPortPaint);
             this.viewPort.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseDown);
             this.viewPort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseMove);
             this.viewPort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseUp);
             // 
-            // triangleToolStripMenuItem
-            // 
-            this.triangleToolStripMenuItem.Name = "triangleToolStripMenuItem";
-            this.triangleToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.triangleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.triangleToolStripMenuItem.Text = "Triangle";
-            this.triangleToolStripMenuItem.Click += new System.EventHandler(this.Triangle_Click);
-            // 
-            // squareToolStripMenuItem
-            // 
-            this.squareToolStripMenuItem.Name = "squareToolStripMenuItem";
-            this.squareToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.squareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.squareToolStripMenuItem.Text = "Square";
-            this.squareToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton4_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteAllToolStripMenuItem});
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            // 
-            // deleteAllToolStripMenuItem
-            // 
-            this.deleteAllToolStripMenuItem.Name = "deleteAllToolStripMenuItem";
-            this.deleteAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.deleteAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deleteAllToolStripMenuItem.Text = "DeleteAll";
-            this.deleteAllToolStripMenuItem.Click += new System.EventHandler(this.DeleteAll_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 423);
+            this.ClientSize = new System.Drawing.Size(981, 720);
             this.Controls.Add(this.viewPort);
             this.Controls.Add(this.speedMenu);
             this.Controls.Add(this.statusBar);
