@@ -46,21 +46,25 @@
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.currentStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.speedMenu = new System.Windows.Forms.ToolStrip();
-            this.drawRectangleSpeedButton = new System.Windows.Forms.ToolStripButton();
             this.pickUpSpeedButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.drawRectangleSpeedButton = new System.Windows.Forms.ToolStripButton();
             this.Ellipse = new System.Windows.Forms.ToolStripButton();
+            this.Circle = new System.Windows.Forms.ToolStripButton();
+            this.Square = new System.Windows.Forms.ToolStripButton();
+            this.Triangle = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.color = new System.Windows.Forms.ToolStripButton();
             this.Group = new System.Windows.Forms.ToolStripButton();
-            this.Square = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.Triangle = new System.Windows.Forms.ToolStripButton();
-            this.Circle = new System.Windows.Forms.ToolStripButton();
+            this.SelectAll = new System.Windows.Forms.ToolStripButton();
             this.viewPort = new Draw.DoubleBufferedPanel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.DeleteAll = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.mainMenu.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.speedMenu.SuspendLayout();
@@ -194,22 +198,16 @@
             this.color,
             this.Group,
             this.toolStripSeparator3,
-            this.toolStripTextBox1});
+            this.toolStripTextBox1,
+            this.toolStripSeparator4,
+            this.SelectAll,
+            this.DeleteAll,
+            this.toolStripSeparator5});
             this.speedMenu.Location = new System.Drawing.Point(0, 24);
             this.speedMenu.Name = "speedMenu";
             this.speedMenu.Size = new System.Drawing.Size(693, 25);
             this.speedMenu.TabIndex = 3;
             this.speedMenu.Text = "toolStrip1";
-            // 
-            // drawRectangleSpeedButton
-            // 
-            this.drawRectangleSpeedButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.drawRectangleSpeedButton.Image = ((System.Drawing.Image)(resources.GetObject("drawRectangleSpeedButton.Image")));
-            this.drawRectangleSpeedButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.drawRectangleSpeedButton.Name = "drawRectangleSpeedButton";
-            this.drawRectangleSpeedButton.Size = new System.Drawing.Size(23, 22);
-            this.drawRectangleSpeedButton.Text = "DrawRectangleButton";
-            this.drawRectangleSpeedButton.Click += new System.EventHandler(this.DrawRectangleSpeedButtonClick);
             // 
             // pickUpSpeedButton
             // 
@@ -221,6 +219,21 @@
             this.pickUpSpeedButton.Size = new System.Drawing.Size(23, 22);
             this.pickUpSpeedButton.Text = "toolStripButton1";
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // drawRectangleSpeedButton
+            // 
+            this.drawRectangleSpeedButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.drawRectangleSpeedButton.Image = ((System.Drawing.Image)(resources.GetObject("drawRectangleSpeedButton.Image")));
+            this.drawRectangleSpeedButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.drawRectangleSpeedButton.Name = "drawRectangleSpeedButton";
+            this.drawRectangleSpeedButton.Size = new System.Drawing.Size(23, 22);
+            this.drawRectangleSpeedButton.Text = "DrawRectangleButton";
+            this.drawRectangleSpeedButton.Click += new System.EventHandler(this.DrawRectangleSpeedButtonClick);
+            // 
             // Ellipse
             // 
             this.Ellipse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -230,6 +243,41 @@
             this.Ellipse.Size = new System.Drawing.Size(23, 22);
             this.Ellipse.Text = "Ellipse";
             this.Ellipse.Click += new System.EventHandler(this.DrawEllipsTeSpeedButtonClick);
+            // 
+            // Circle
+            // 
+            this.Circle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Circle.Image = ((System.Drawing.Image)(resources.GetObject("Circle.Image")));
+            this.Circle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Circle.Name = "Circle";
+            this.Circle.Size = new System.Drawing.Size(23, 22);
+            this.Circle.Text = "Circle";
+            this.Circle.Click += new System.EventHandler(this.Circle_Click);
+            // 
+            // Square
+            // 
+            this.Square.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Square.Image = ((System.Drawing.Image)(resources.GetObject("Square.Image")));
+            this.Square.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Square.Name = "Square";
+            this.Square.Size = new System.Drawing.Size(23, 22);
+            this.Square.Text = "Square";
+            this.Square.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // Triangle
+            // 
+            this.Triangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Triangle.Image = ((System.Drawing.Image)(resources.GetObject("Triangle.Image")));
+            this.Triangle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Triangle.Name = "Triangle";
+            this.Triangle.Size = new System.Drawing.Size(23, 22);
+            this.Triangle.Text = "Triangle";
+            this.Triangle.Click += new System.EventHandler(this.Triangle_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // color
             // 
@@ -252,15 +300,10 @@
             this.Group.Text = "Group";
             this.Group.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
-            // Square
+            // toolStripSeparator3
             // 
-            this.Square.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Square.Image = ((System.Drawing.Image)(resources.GetObject("Square.Image")));
-            this.Square.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Square.Name = "Square";
-            this.Square.Size = new System.Drawing.Size(23, 22);
-            this.Square.Text = "Square";
-            this.Square.Click += new System.EventHandler(this.toolStripButton4_Click);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripTextBox1
             // 
@@ -268,25 +311,15 @@
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
             this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
-            // Triangle
+            // SelectAll
             // 
-            this.Triangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Triangle.Image = ((System.Drawing.Image)(resources.GetObject("Triangle.Image")));
-            this.Triangle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Triangle.Name = "Triangle";
-            this.Triangle.Size = new System.Drawing.Size(23, 22);
-            this.Triangle.Text = "Triangle";
-            this.Triangle.Click += new System.EventHandler(this.Triangle_Click);
-            // 
-            // Circle
-            // 
-            this.Circle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Circle.Image = ((System.Drawing.Image)(resources.GetObject("Circle.Image")));
-            this.Circle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Circle.Name = "Circle";
-            this.Circle.Size = new System.Drawing.Size(23, 22);
-            this.Circle.Text = "Circle";
-            this.Circle.Click += new System.EventHandler(this.Circle_Click);
+            this.SelectAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SelectAll.Image = ((System.Drawing.Image)(resources.GetObject("SelectAll.Image")));
+            this.SelectAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SelectAll.Name = "SelectAll";
+            this.SelectAll.Size = new System.Drawing.Size(23, 22);
+            this.SelectAll.Text = "selectAll";
+            this.SelectAll.Click += new System.EventHandler(this.SelectAll_Click);
             // 
             // viewPort
             // 
@@ -300,20 +333,25 @@
             this.viewPort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseMove);
             this.viewPort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseUp);
             // 
-            // toolStripSeparator1
+            // toolStripSeparator4
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripSeparator2
+            // DeleteAll
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.DeleteAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.DeleteAll.Image = ((System.Drawing.Image)(resources.GetObject("DeleteAll.Image")));
+            this.DeleteAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.DeleteAll.Name = "DeleteAll";
+            this.DeleteAll.Size = new System.Drawing.Size(23, 22);
+            this.DeleteAll.Text = "DeleteAll";
+            this.DeleteAll.Click += new System.EventHandler(this.DeleteAll_Click);
             // 
-            // toolStripSeparator3
+            // toolStripSeparator5
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
             // MainForm
             // 
@@ -370,5 +408,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton SelectAll;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton DeleteAll;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }

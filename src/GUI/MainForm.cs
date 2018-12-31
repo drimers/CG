@@ -185,5 +185,21 @@ namespace Draw
 
             viewPort.Invalidate();
         }
+
+        private void SelectAll_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.SelectAll();
+            statusBar.Items[0].Text = "Последно действие: Селектиране на всички фигури";
+
+            viewPort.Invalidate();
+        }
+
+        private void DeleteAll_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.DeleteAll();
+            statusBar.Items[0].Text = "Последно действие: Изтриване на всички фигури";
+
+            viewPort.Invalidate();
+        }
     }
 }
