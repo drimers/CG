@@ -260,14 +260,13 @@ namespace Draw
 
         public void SelectAll()
         {
-            // GroupShape group = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
+
             Selection = new List<Shape>(ShapeList);
 
 
             foreach (Shape item in Selection)
             {
                 ShapeList.Add(item);
-                // Selection.Add(item);
             }
         }
 
