@@ -67,7 +67,7 @@ namespace Draw
 
             RectangleShape rectangle = new RectangleShape(new Rectangle(x, y, 100, 200));
 
-            rectangle.FillColor = Color.White;
+            rectangle.FillColor = Color.DeepSkyBlue;
             rectangle.BorderColor = Color.Green;
             ShapeList.Add(rectangle);
         }
@@ -120,8 +120,9 @@ namespace Draw
 
             EllipseShape ellipse = new EllipseShape(new Rectangle(x, y, 200, 100));
 
-            ellipse.FillColor = Color.White;
+            ellipse.FillColor = Color.Red;
             ellipse.BorderColor = Color.Green;
+
             ShapeList.Add(ellipse);
 
         }
