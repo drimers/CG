@@ -61,10 +61,13 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SelectAll = new System.Windows.Forms.ToolStripButton();
-            this.viewPort = new Draw.DoubleBufferedPanel();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.DeleteAll = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.viewPort = new Draw.DoubleBufferedPanel();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.ScaleUp = new System.Windows.Forms.ToolStripButton();
+            this.ScaleDown = new System.Windows.Forms.ToolStripButton();
             this.mainMenu.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.speedMenu.SuspendLayout();
@@ -200,6 +203,9 @@
             this.toolStripSeparator3,
             this.toolStripTextBox1,
             this.toolStripSeparator4,
+            this.ScaleUp,
+            this.ScaleDown,
+            this.toolStripSeparator6,
             this.SelectAll,
             this.DeleteAll,
             this.toolStripSeparator5});
@@ -321,18 +327,6 @@
             this.SelectAll.Text = "selectAll";
             this.SelectAll.Click += new System.EventHandler(this.SelectAll_Click);
             // 
-            // viewPort
-            // 
-            this.viewPort.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewPort.Location = new System.Drawing.Point(0, 49);
-            this.viewPort.Name = "viewPort";
-            this.viewPort.Size = new System.Drawing.Size(693, 352);
-            this.viewPort.TabIndex = 4;
-            this.viewPort.Paint += new System.Windows.Forms.PaintEventHandler(this.ViewPortPaint);
-            this.viewPort.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseDown);
-            this.viewPort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseMove);
-            this.viewPort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseUp);
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
@@ -352,6 +346,43 @@
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // viewPort
+            // 
+            this.viewPort.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.viewPort.Location = new System.Drawing.Point(0, 49);
+            this.viewPort.Name = "viewPort";
+            this.viewPort.Size = new System.Drawing.Size(693, 352);
+            this.viewPort.TabIndex = 4;
+            this.viewPort.Paint += new System.Windows.Forms.PaintEventHandler(this.ViewPortPaint);
+            this.viewPort.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseDown);
+            this.viewPort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseMove);
+            this.viewPort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseUp);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
+            // ScaleUp
+            // 
+            this.ScaleUp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ScaleUp.Image = ((System.Drawing.Image)(resources.GetObject("ScaleUp.Image")));
+            this.ScaleUp.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ScaleUp.Name = "ScaleUp";
+            this.ScaleUp.Size = new System.Drawing.Size(23, 22);
+            this.ScaleUp.Text = "ScaleUp";
+            this.ScaleUp.Click += new System.EventHandler(this.ScaleUp_Click);
+            // 
+            // ScaleDown
+            // 
+            this.ScaleDown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ScaleDown.Image = ((System.Drawing.Image)(resources.GetObject("ScaleDown.Image")));
+            this.ScaleDown.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ScaleDown.Name = "ScaleDown";
+            this.ScaleDown.Size = new System.Drawing.Size(23, 22);
+            this.ScaleDown.Text = "ScaleDown";
+            this.ScaleDown.Click += new System.EventHandler(this.ScaleDown_Click);
             // 
             // MainForm
             // 
@@ -412,5 +443,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton DeleteAll;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton ScaleUp;
+        private System.Windows.Forms.ToolStripButton ScaleDown;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     }
 }

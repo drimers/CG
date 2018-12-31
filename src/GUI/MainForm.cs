@@ -201,5 +201,21 @@ namespace Draw
 
             viewPort.Invalidate();
         }
+
+        private void ScaleUp_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.ScaleUp();
+            statusBar.Items[0].Text = "Последно действие: Увеличаване размера на селектираните фигури";
+
+            viewPort.Invalidate();
+        }
+
+        private void ScaleDown_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.ScaleDown();
+            statusBar.Items[0].Text = "Последно действие: Намаляване размера на селектираните фигури";
+
+            viewPort.Invalidate();
+        }
     }
 }
