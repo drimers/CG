@@ -221,7 +221,7 @@ namespace Draw
         private void RemoveSelection_Click(object sender, EventArgs e)
         {
             dialogProcessor.RemoveSelection();
-            statusBar.Items[0].Text = "Последно действие: Изтриване на селектираните фигури";
+            statusBar.Items[0].Text = "Последно действие: Размаркиране на селектираните фигури";
 
             viewPort.Invalidate();
         }
