@@ -263,6 +263,14 @@ namespace Draw
         }
 
 
+        public void OpenFile(string fileName)
+        {
+            FileStream fs = new FileStream(fileName, FileMode.Open);
+            BinaryFormatter bf = new BinaryFormatter();
+            ShapeList = (List<Shape>)bf.Deserialize(fs);
+            fs.Close();
+        }
+
         public void RemoveSelection()
         {
 

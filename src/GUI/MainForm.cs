@@ -225,5 +225,13 @@ namespace Draw
 
             viewPort.Invalidate();
         }
+
+        private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                dialogProcessor.OpenFile(openFileDialog1.FileName);
+            }
+        }
     }
 }

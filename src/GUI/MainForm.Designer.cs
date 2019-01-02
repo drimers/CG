@@ -68,12 +68,14 @@
             this.ScaleDown = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.SelectAll = new System.Windows.Forms.ToolStripButton();
+            this.RemoveSelection = new System.Windows.Forms.ToolStripButton();
             this.DeleteAll = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.viewPort = new Draw.DoubleBufferedPanel();
-            this.RemoveSelection = new System.Windows.Forms.ToolStripButton();
+            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.mainMenu.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.speedMenu.SuspendLayout();
@@ -97,6 +99,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveAsToolStripMenuItem,
+            this.openFileToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
@@ -105,14 +108,14 @@
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveAsToolStripMenuItem.Text = "Save As...";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItemClick);
             // 
@@ -409,6 +412,16 @@
             this.SelectAll.Text = "selectAll";
             this.SelectAll.Click += new System.EventHandler(this.SelectAll_Click);
             // 
+            // RemoveSelection
+            // 
+            this.RemoveSelection.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.RemoveSelection.Image = ((System.Drawing.Image)(resources.GetObject("RemoveSelection.Image")));
+            this.RemoveSelection.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RemoveSelection.Name = "RemoveSelection";
+            this.RemoveSelection.Size = new System.Drawing.Size(26, 26);
+            this.RemoveSelection.Text = "RemoveSelection";
+            this.RemoveSelection.Click += new System.EventHandler(this.RemoveSelection_Click);
+            // 
             // DeleteAll
             // 
             this.DeleteAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -436,15 +449,16 @@
             this.viewPort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseMove);
             this.viewPort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseUp);
             // 
-            // RemoveSelection
+            // openFileToolStripMenuItem
             // 
-            this.RemoveSelection.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.RemoveSelection.Image = ((System.Drawing.Image)(resources.GetObject("RemoveSelection.Image")));
-            this.RemoveSelection.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RemoveSelection.Name = "RemoveSelection";
-            this.RemoveSelection.Size = new System.Drawing.Size(26, 26);
-            this.RemoveSelection.Text = "RemoveSelection";
-            this.RemoveSelection.Click += new System.EventHandler(this.RemoveSelection_Click);
+            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openFileToolStripMenuItem.Text = "Open File";
+            this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // MainForm
             // 
@@ -514,5 +528,7 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton RemoveSelection;
+        private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
