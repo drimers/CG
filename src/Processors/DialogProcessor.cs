@@ -223,6 +223,8 @@ namespace Draw
 
         }
 
+        GroupShape group;
+
         public void Group()
         {
             if (Selection.Count < 2) return;
@@ -239,7 +241,8 @@ namespace Draw
                 if (maxY < item.Location.Y + item.Height) maxY = item.Location.Y + item.Height;
             }
 
-            GroupShape group = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
+            //GroupShape group = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
+            group = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
             group.SubItems = Selection;
             Selection = new List<Shape>();
             Selection.Add(group);
@@ -259,6 +262,17 @@ namespace Draw
             fs.Close();
         }
 
+
+        public void RemoveSelection()
+        {
+            if (Selection.Count < 1) return;
+
+
+            Selection = new List<Shape>();
+
+        }
+
+
         public void SelectAll()
         {
 
@@ -273,6 +287,7 @@ namespace Draw
 
         public void DeleteAll()
         {
+            //if (Selection.Count < 1) return;
             Selection = new List<Shape>(ShapeList);
             foreach (Shape item in Selection)
             {

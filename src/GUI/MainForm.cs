@@ -217,5 +217,13 @@ namespace Draw
 
             viewPort.Invalidate();
         }
+
+        private void RemoveSelection_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.RemoveSelection();
+            statusBar.Items[0].Text = "Последно действие: Изтриване на селектираните фигури";
+
+            viewPort.Invalidate();
+        }
     }
 }

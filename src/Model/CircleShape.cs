@@ -58,7 +58,10 @@ namespace Draw
 
 
             //just for test (drawing Line)
-            //grfx.DrawLine(new Pen(FillColor), Rectangle.X, Rectangle.Y, Rectangle.X + Rectangle.Width - 200, Rectangle.Y + Rectangle.Height + 100);
+            // grfx.DrawLine(new Pen(Color.Black), Rectangle.X, Rectangle.Y, Rectangle.X + Rectangle.Width - 100, Rectangle.Y + Rectangle.Height - 50);
+
+
+
         }
     }
 }
