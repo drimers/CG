@@ -91,7 +91,7 @@
             this.helpToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(981, 24);
+            this.mainMenu.Size = new System.Drawing.Size(892, 24);
             this.mainMenu.TabIndex = 1;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -229,9 +229,9 @@
             // 
             this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.currentStatusLabel});
-            this.statusBar.Location = new System.Drawing.Point(0, 698);
+            this.statusBar.Location = new System.Drawing.Point(0, 651);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(981, 22);
+            this.statusBar.Size = new System.Drawing.Size(892, 22);
             this.statusBar.TabIndex = 2;
             this.statusBar.Text = "statusStrip1";
             // 
@@ -266,7 +266,7 @@
             this.toolStripSeparator5});
             this.speedMenu.Location = new System.Drawing.Point(0, 24);
             this.speedMenu.Name = "speedMenu";
-            this.speedMenu.Size = new System.Drawing.Size(981, 29);
+            this.speedMenu.Size = new System.Drawing.Size(892, 29);
             this.speedMenu.TabIndex = 3;
             this.speedMenu.Text = "toolStrip1";
             // 
@@ -442,7 +442,7 @@
             this.viewPort.Dock = System.Windows.Forms.DockStyle.Fill;
             this.viewPort.Location = new System.Drawing.Point(0, 53);
             this.viewPort.Name = "viewPort";
-            this.viewPort.Size = new System.Drawing.Size(981, 645);
+            this.viewPort.Size = new System.Drawing.Size(892, 598);
             this.viewPort.TabIndex = 4;
             this.viewPort.Paint += new System.Windows.Forms.PaintEventHandler(this.ViewPortPaint);
             this.viewPort.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseDown);
@@ -464,7 +464,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 720);
+            this.ClientSize = new System.Drawing.Size(892, 673);
             this.Controls.Add(this.viewPort);
             this.Controls.Add(this.speedMenu);
             this.Controls.Add(this.statusBar);

@@ -232,6 +232,7 @@ namespace Draw
             {
                 dialogProcessor.OpenFile(openFileDialog1.FileName);
             }
+            viewPort.Invalidate();
         }
     }
 }
