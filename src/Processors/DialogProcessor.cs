@@ -265,9 +265,13 @@ namespace Draw
 
         public void RemoveSelection()
         {
+
             if (Selection.Count < 1) return;
 
-
+            foreach (Shape item in Selection)
+            {
+                ShapeList.Remove(item);
+            }
             Selection = new List<Shape>();
 
         }
