@@ -322,15 +322,19 @@ namespace Draw
 
         public void ScaleUp()
         {
+            //foreach (Shape item in group.SubItems)
             foreach (Shape item in Selection)
             {
                 item.Height = item.Height * 2;
                 item.Width = item.Width * 2;
             }
+
         }
 
         public void ScaleDown()
         {
+
+            // foreach (Shape item in group.SubItems)
             foreach (Shape item in Selection)
             {
                 item.Height = item.Height / 2;
