@@ -226,6 +226,14 @@ namespace Draw
             viewPort.Invalidate();
         }
 
+        private void RemoveGroupSelection_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.RemoveGroupSelection();
+            statusBar.Items[0].Text = "Последно действие: Размаркиране на селектираните фигури";
+
+            viewPort.Invalidate();
+        }
+
         private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -234,5 +242,7 @@ namespace Draw
             }
             viewPort.Invalidate();
         }
+
+
     }
 }

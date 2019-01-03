@@ -276,14 +276,25 @@ namespace Draw
 
             if (Selection.Count < 1) return;
 
-            foreach (Shape item in Selection)
-            {
-                ShapeList.Remove(item);
-            }
+
             Selection = new List<Shape>();
 
         }
 
+
+        public void RemoveGroupSelection()
+        {
+
+            if (Selection.Count < 1) return;
+
+            foreach (Shape item in Selection)
+            {
+                ShapeList.Remove(item);
+
+            }
+            Selection = new List<Shape>();
+
+        }
 
         public void SelectAll()
         {
@@ -299,11 +310,12 @@ namespace Draw
 
         public void DeleteAll()
         {
-            //if (Selection.Count < 1) return;
+            // if (Selection.Count < 1) return;
             Selection = new List<Shape>(ShapeList);
             foreach (Shape item in Selection)
             {
                 ShapeList.Remove(item);
+
             }
             Selection = new List<Shape>();
         }
