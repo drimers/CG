@@ -243,6 +243,20 @@ namespace Draw
             viewPort.Invalidate();
         }
 
+        private void GroupScaleUp_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.GroupScaleUp();
+            statusBar.Items[0].Text = "Последно действие: Увеличаване размера на група фигури";
 
+            viewPort.Invalidate();
+        }
+
+        private void GroupScaleDown_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.GroupScaleDown();
+            statusBar.Items[0].Text = "Последно действие: Намаляване размера на група фигури";
+
+            viewPort.Invalidate();
+        }
     }
 }
