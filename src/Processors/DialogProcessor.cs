@@ -103,12 +103,14 @@ namespace Draw
 
         public void TranslateTo(PointF p)
         {
-            //if (selection != null) {
-            foreach (Shape item in Selection)
+            if (Selection != null)
             {
-                item.Location = new PointF(item.Location.X + p.X - lastLocation.X, item.Location.Y + p.Y - lastLocation.Y);
+                foreach (Shape item in Selection)
+                {
+                    item.Location = new PointF(item.Location.X + p.X - lastLocation.X, item.Location.Y + p.Y - lastLocation.Y);
+                }
+                lastLocation = p;
             }
-            lastLocation = p;
         }
 
         public void AddRandomEllipse()
@@ -322,12 +324,14 @@ namespace Draw
         public void ScaleUp()
         {
             //foreach (Shape item in group.SubItems)
-            foreach (Shape item in Selection)
+            if (Selection != null)
             {
-                item.Height = item.Height * 2;
-                item.Width = item.Width * 2;
+                foreach (Shape item in Selection)
+                {
+                    item.Height = item.Height * 2;
+                    item.Width = item.Width * 2;
+                }
             }
-
         }
 
 
@@ -335,10 +339,13 @@ namespace Draw
         {
 
             // foreach (Shape item in group.SubItems)
-            foreach (Shape item in Selection)
+            if (Selection != null)
             {
-                item.Height = item.Height / 2;
-                item.Width = item.Width / 2;
+                foreach (Shape item in Selection)
+                {
+                    item.Height = item.Height / 2;
+                    item.Width = item.Width / 2;
+                }
             }
         }
 
@@ -352,7 +359,6 @@ namespace Draw
                 item.Height = item.Height * 2;
                 item.Width = item.Width * 2;
             }
-
         }
 
 
