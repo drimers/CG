@@ -51,9 +51,15 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.currentStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.speedMenu = new System.Windows.Forms.ToolStrip();
-            this.pickUpSpeedButton = new System.Windows.Forms.ToolStripButton();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.viewPort = new Draw.DoubleBufferedPanel();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.OpenFile = new System.Windows.Forms.ToolStripButton();
+            this.SaveAs = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.pickUpSpeedButton = new System.Windows.Forms.ToolStripButton();
             this.drawRectangleSpeedButton = new System.Windows.Forms.ToolStripButton();
             this.Ellipse = new System.Windows.Forms.ToolStripButton();
             this.Circle = new System.Windows.Forms.ToolStripButton();
@@ -62,6 +68,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.color = new System.Windows.Forms.ToolStripButton();
             this.Group = new System.Windows.Forms.ToolStripButton();
+            this.GroupScaleUp = new System.Windows.Forms.ToolStripButton();
+            this.GroupScaleDown = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -72,16 +80,7 @@
             this.RemoveSelection = new System.Windows.Forms.ToolStripButton();
             this.DeleteAll = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.RemoveGroupSelection = new System.Windows.Forms.ToolStripButton();
-            this.GroupScaleUp = new System.Windows.Forms.ToolStripButton();
-            this.GroupScaleDown = new System.Windows.Forms.ToolStripButton();
-            this.OpenFile = new System.Windows.Forms.ToolStripButton();
-            this.SaveAs = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.viewPort = new Draw.DoubleBufferedPanel();
+            this.speedMenu = new System.Windows.Forms.ToolStrip();
             this.mainMenu.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.speedMenu.SuspendLayout();
@@ -254,41 +253,51 @@
             this.currentStatusLabel.Name = "currentStatusLabel";
             this.currentStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // speedMenu
+            // openFileDialog1
             // 
-            this.speedMenu.ImageScalingSize = new System.Drawing.Size(30, 30);
-            this.speedMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator7,
-            this.OpenFile,
-            this.SaveAs,
-            this.toolStripSeparator2,
-            this.pickUpSpeedButton,
-            this.drawRectangleSpeedButton,
-            this.Ellipse,
-            this.Circle,
-            this.Square,
-            this.Triangle,
-            this.toolStripSeparator1,
-            this.color,
-            this.Group,
-            this.GroupScaleUp,
-            this.GroupScaleDown,
-            this.RemoveGroupSelection,
-            this.toolStripSeparator3,
-            this.toolStripTextBox1,
-            this.toolStripSeparator4,
-            this.ScaleUp,
-            this.ScaleDown,
-            this.toolStripSeparator6,
-            this.SelectAll,
-            this.RemoveSelection,
-            this.DeleteAll,
-            this.toolStripSeparator5});
-            this.speedMenu.Location = new System.Drawing.Point(0, 25);
-            this.speedMenu.Name = "speedMenu";
-            this.speedMenu.Size = new System.Drawing.Size(892, 37);
-            this.speedMenu.TabIndex = 3;
-            this.speedMenu.Text = "toolStrip1";
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // viewPort
+            // 
+            this.viewPort.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.viewPort.Location = new System.Drawing.Point(0, 62);
+            this.viewPort.Name = "viewPort";
+            this.viewPort.Size = new System.Drawing.Size(892, 589);
+            this.viewPort.TabIndex = 4;
+            this.viewPort.Paint += new System.Windows.Forms.PaintEventHandler(this.ViewPortPaint);
+            this.viewPort.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseDown);
+            this.viewPort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseMove);
+            this.viewPort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseUp);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 37);
+            // 
+            // OpenFile
+            // 
+            this.OpenFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.OpenFile.Image = ((System.Drawing.Image)(resources.GetObject("OpenFile.Image")));
+            this.OpenFile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.OpenFile.Name = "OpenFile";
+            this.OpenFile.Size = new System.Drawing.Size(34, 34);
+            this.OpenFile.Text = "OpenFile";
+            this.OpenFile.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
+            // 
+            // SaveAs
+            // 
+            this.SaveAs.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SaveAs.Image = ((System.Drawing.Image)(resources.GetObject("SaveAs.Image")));
+            this.SaveAs.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SaveAs.Name = "SaveAs";
+            this.SaveAs.Size = new System.Drawing.Size(34, 34);
+            this.SaveAs.Text = "SaveAs";
+            this.SaveAs.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 37);
             // 
             // pickUpSpeedButton
             // 
@@ -299,11 +308,6 @@
             this.pickUpSpeedButton.Name = "pickUpSpeedButton";
             this.pickUpSpeedButton.Size = new System.Drawing.Size(34, 34);
             this.pickUpSpeedButton.Text = "toolStripButton1";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 37);
             // 
             // drawRectangleSpeedButton
             // 
@@ -381,6 +385,26 @@
             this.Group.Text = "Group";
             this.Group.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
+            // GroupScaleUp
+            // 
+            this.GroupScaleUp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.GroupScaleUp.Image = ((System.Drawing.Image)(resources.GetObject("GroupScaleUp.Image")));
+            this.GroupScaleUp.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.GroupScaleUp.Name = "GroupScaleUp";
+            this.GroupScaleUp.Size = new System.Drawing.Size(34, 34);
+            this.GroupScaleUp.Text = "GroupScaleUp";
+            this.GroupScaleUp.Click += new System.EventHandler(this.GroupScaleUp_Click);
+            // 
+            // GroupScaleDown
+            // 
+            this.GroupScaleDown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.GroupScaleDown.Image = ((System.Drawing.Image)(resources.GetObject("GroupScaleDown.Image")));
+            this.GroupScaleDown.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.GroupScaleDown.Name = "GroupScaleDown";
+            this.GroupScaleDown.Size = new System.Drawing.Size(34, 34);
+            this.GroupScaleDown.Text = "GroupScaleDown";
+            this.GroupScaleDown.Click += new System.EventHandler(this.GroupScaleDown_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
@@ -457,76 +481,40 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 37);
             // 
-            // openFileDialog1
+            // speedMenu
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // RemoveGroupSelection
-            // 
-            this.RemoveGroupSelection.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.RemoveGroupSelection.Image = ((System.Drawing.Image)(resources.GetObject("RemoveGroupSelection.Image")));
-            this.RemoveGroupSelection.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RemoveGroupSelection.Name = "RemoveGroupSelection";
-            this.RemoveGroupSelection.Size = new System.Drawing.Size(34, 34);
-            this.RemoveGroupSelection.Text = "RemoveGroupSelection";
-            this.RemoveGroupSelection.Click += new System.EventHandler(this.RemoveGroupSelection_Click);
-            // 
-            // GroupScaleUp
-            // 
-            this.GroupScaleUp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.GroupScaleUp.Image = ((System.Drawing.Image)(resources.GetObject("GroupScaleUp.Image")));
-            this.GroupScaleUp.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.GroupScaleUp.Name = "GroupScaleUp";
-            this.GroupScaleUp.Size = new System.Drawing.Size(34, 34);
-            this.GroupScaleUp.Text = "GroupScaleUp";
-            this.GroupScaleUp.Click += new System.EventHandler(this.GroupScaleUp_Click);
-            // 
-            // GroupScaleDown
-            // 
-            this.GroupScaleDown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.GroupScaleDown.Image = ((System.Drawing.Image)(resources.GetObject("GroupScaleDown.Image")));
-            this.GroupScaleDown.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.GroupScaleDown.Name = "GroupScaleDown";
-            this.GroupScaleDown.Size = new System.Drawing.Size(34, 34);
-            this.GroupScaleDown.Text = "GroupScaleDown";
-            this.GroupScaleDown.Click += new System.EventHandler(this.GroupScaleDown_Click);
-            // 
-            // OpenFile
-            // 
-            this.OpenFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.OpenFile.Image = ((System.Drawing.Image)(resources.GetObject("OpenFile.Image")));
-            this.OpenFile.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.OpenFile.Name = "OpenFile";
-            this.OpenFile.Size = new System.Drawing.Size(34, 34);
-            this.OpenFile.Text = "OpenFile";
-            this.OpenFile.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
-            // 
-            // SaveAs
-            // 
-            this.SaveAs.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.SaveAs.Image = ((System.Drawing.Image)(resources.GetObject("SaveAs.Image")));
-            this.SaveAs.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.SaveAs.Name = "SaveAs";
-            this.SaveAs.Size = new System.Drawing.Size(34, 34);
-            this.SaveAs.Text = "SaveAs";
-            this.SaveAs.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 37);
-            // 
-            // viewPort
-            // 
-            this.viewPort.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewPort.Location = new System.Drawing.Point(0, 62);
-            this.viewPort.Name = "viewPort";
-            this.viewPort.Size = new System.Drawing.Size(892, 589);
-            this.viewPort.TabIndex = 4;
-            this.viewPort.Paint += new System.Windows.Forms.PaintEventHandler(this.ViewPortPaint);
-            this.viewPort.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseDown);
-            this.viewPort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseMove);
-            this.viewPort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseUp);
+            this.speedMenu.ImageScalingSize = new System.Drawing.Size(30, 30);
+            this.speedMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator7,
+            this.OpenFile,
+            this.SaveAs,
+            this.toolStripSeparator2,
+            this.pickUpSpeedButton,
+            this.drawRectangleSpeedButton,
+            this.Ellipse,
+            this.Circle,
+            this.Square,
+            this.Triangle,
+            this.toolStripSeparator1,
+            this.color,
+            this.Group,
+            this.GroupScaleUp,
+            this.GroupScaleDown,
+            this.toolStripSeparator3,
+            this.toolStripTextBox1,
+            this.toolStripSeparator4,
+            this.ScaleUp,
+            this.ScaleDown,
+            this.toolStripSeparator6,
+            this.SelectAll,
+            this.RemoveSelection,
+            this.DeleteAll,
+            this.toolStripSeparator5});
+            this.speedMenu.Location = new System.Drawing.Point(0, 25);
+            this.speedMenu.Name = "speedMenu";
+            this.speedMenu.Size = new System.Drawing.Size(892, 37);
+            this.speedMenu.TabIndex = 3;
+            this.speedMenu.Text = "toolStrip1";
             // 
             // MainForm
             // 
@@ -555,54 +543,53 @@
 
         private System.Windows.Forms.ToolStripStatusLabel currentStatusLabel;
         private Draw.DoubleBufferedPanel viewPort;
-        private System.Windows.Forms.ToolStripButton pickUpSpeedButton;
-        private System.Windows.Forms.ToolStripButton drawRectangleSpeedButton;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip speedMenu;
         private System.Windows.Forms.StatusStrip statusBar;
         private System.Windows.Forms.MenuStrip mainMenu;
-        private System.Windows.Forms.ToolStripButton Ellipse;
-        private System.Windows.Forms.ToolStripButton color;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.ToolStripButton Group;
         private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rectangleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ellipseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripButton Square;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.ToolStripButton Triangle;
-        private System.Windows.Forms.ToolStripButton Circle;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton SelectAll;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton DeleteAll;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripButton ScaleUp;
-        private System.Windows.Forms.ToolStripButton ScaleDown;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem circleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem triangleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem squareToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteAllToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton RemoveSelection;
         private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.ToolStripButton RemoveGroupSelection;
-        private System.Windows.Forms.ToolStripButton GroupScaleUp;
-        private System.Windows.Forms.ToolStripButton GroupScaleDown;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton OpenFile;
         private System.Windows.Forms.ToolStripButton SaveAs;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton pickUpSpeedButton;
+        private System.Windows.Forms.ToolStripButton drawRectangleSpeedButton;
+        private System.Windows.Forms.ToolStripButton Ellipse;
+        private System.Windows.Forms.ToolStripButton Circle;
+        private System.Windows.Forms.ToolStripButton Square;
+        private System.Windows.Forms.ToolStripButton Triangle;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton color;
+        private System.Windows.Forms.ToolStripButton Group;
+        private System.Windows.Forms.ToolStripButton GroupScaleUp;
+        private System.Windows.Forms.ToolStripButton GroupScaleDown;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton ScaleUp;
+        private System.Windows.Forms.ToolStripButton ScaleDown;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripButton SelectAll;
+        private System.Windows.Forms.ToolStripButton RemoveSelection;
+        private System.Windows.Forms.ToolStripButton DeleteAll;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStrip speedMenu;
     }
 }

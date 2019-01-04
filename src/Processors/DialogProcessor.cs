@@ -103,14 +103,12 @@ namespace Draw
 
         public void TranslateTo(PointF p)
         {
-            if (Selection != null)
+            foreach (Shape item in Selection)
             {
-                foreach (Shape item in Selection)
-                {
-                    item.Location = new PointF(item.Location.X + p.X - lastLocation.X, item.Location.Y + p.Y - lastLocation.Y);
-                }
-                lastLocation = p;
+                item.Translate(p.X - lastLocation.X, p.Y - lastLocation.Y);
+                //item.Location = new PointF(item.Location.X + p.X - lastLocation.X, item.Location.Y + p.Y - lastLocation.Y);
             }
+            lastLocation = p;
         }
 
         public void AddRandomEllipse()
@@ -277,25 +275,16 @@ namespace Draw
 
             if (Selection.Count < 1) return;
 
-
-            Selection = new List<Shape>();
-
-        }
-
-
-        public void RemoveGroupSelection()
-        {
-
-            if (Selection.Count < 1) return;
-
             foreach (Shape item in Selection)
             {
-                ShapeList.Remove(item);
-
+                //ShapeList.Remove(item);
+                item.Selected = false;
             }
             Selection = new List<Shape>();
 
         }
+
+
 
         public void SelectAll()
         {
@@ -326,7 +315,7 @@ namespace Draw
             //foreach (Shape item in group.SubItems)
             if (Selection != null)
             {
-                foreach (Shape item in Selection)
+                foreach (Shape item in selection)
                 {
                     item.Height = item.Height * 2;
                     item.Width = item.Width * 2;
@@ -339,9 +328,9 @@ namespace Draw
         {
 
             // foreach (Shape item in group.SubItems)
-            if (Selection != null)
+            // if (Selection != null)
             {
-                foreach (Shape item in Selection)
+                foreach (Shape item in selection)
                 {
                     item.Height = item.Height / 2;
                     item.Width = item.Width / 2;
