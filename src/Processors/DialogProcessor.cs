@@ -100,15 +100,14 @@ namespace Draw
         /// Транслация на избраният елемент на вектор определен от <paramref name="p>p</paramref>
         /// </summary>
         /// <param name="p">Вектор на транслация.</param>
+
         public void TranslateTo(PointF p)
         {
             //if (selection != null) {
             foreach (Shape item in Selection)
             {
-
                 item.Location = new PointF(item.Location.X + p.X - lastLocation.X, item.Location.Y + p.Y - lastLocation.Y);
             }
-
             lastLocation = p;
         }
 
