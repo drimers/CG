@@ -54,7 +54,6 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.viewPort = new Draw.DoubleBufferedPanel();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.OpenFile = new System.Windows.Forms.ToolStripButton();
             this.SaveAs = new System.Windows.Forms.ToolStripButton();
@@ -81,6 +80,8 @@
             this.DeleteAll = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.speedMenu = new System.Windows.Forms.ToolStrip();
+            this.viewPort = new Draw.DoubleBufferedPanel();
+            this.GroupRemoveSelection = new System.Windows.Forms.ToolStripButton();
             this.mainMenu.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.speedMenu.SuspendLayout();
@@ -256,18 +257,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // viewPort
-            // 
-            this.viewPort.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewPort.Location = new System.Drawing.Point(0, 62);
-            this.viewPort.Name = "viewPort";
-            this.viewPort.Size = new System.Drawing.Size(892, 589);
-            this.viewPort.TabIndex = 4;
-            this.viewPort.Paint += new System.Windows.Forms.PaintEventHandler(this.ViewPortPaint);
-            this.viewPort.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseDown);
-            this.viewPort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseMove);
-            this.viewPort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseUp);
             // 
             // toolStripSeparator7
             // 
@@ -498,6 +487,7 @@
             this.toolStripSeparator1,
             this.color,
             this.Group,
+            this.GroupRemoveSelection,
             this.GroupScaleUp,
             this.GroupScaleDown,
             this.toolStripSeparator3,
@@ -515,6 +505,28 @@
             this.speedMenu.Size = new System.Drawing.Size(892, 37);
             this.speedMenu.TabIndex = 3;
             this.speedMenu.Text = "toolStrip1";
+            // 
+            // viewPort
+            // 
+            this.viewPort.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.viewPort.Location = new System.Drawing.Point(0, 62);
+            this.viewPort.Name = "viewPort";
+            this.viewPort.Size = new System.Drawing.Size(892, 589);
+            this.viewPort.TabIndex = 4;
+            this.viewPort.Paint += new System.Windows.Forms.PaintEventHandler(this.ViewPortPaint);
+            this.viewPort.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseDown);
+            this.viewPort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseMove);
+            this.viewPort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseUp);
+            // 
+            // GroupRemoveSelection
+            // 
+            this.GroupRemoveSelection.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.GroupRemoveSelection.Image = ((System.Drawing.Image)(resources.GetObject("GroupRemoveSelection.Image")));
+            this.GroupRemoveSelection.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.GroupRemoveSelection.Name = "GroupRemoveSelection";
+            this.GroupRemoveSelection.Size = new System.Drawing.Size(34, 34);
+            this.GroupRemoveSelection.Text = "GroupRemoveSelection";
+            this.GroupRemoveSelection.Click += new System.EventHandler(this.GroupRemoveSelection_Click);
             // 
             // MainForm
             // 
@@ -591,5 +603,6 @@
         private System.Windows.Forms.ToolStripButton DeleteAll;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStrip speedMenu;
+        private System.Windows.Forms.ToolStripButton GroupRemoveSelection;
     }
 }

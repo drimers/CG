@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace Draw
 {
@@ -240,7 +241,7 @@ namespace Draw
                 if (maxY < item.Location.Y + item.Height) maxY = item.Location.Y + item.Height;
             }
 
-            //GroupShape group = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
+            // GroupShape group = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
             group = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
             group.SubItems = Selection;
             Selection = new List<Shape>();
@@ -277,21 +278,30 @@ namespace Draw
 
             foreach (Shape item in Selection)
             {
-                //ShapeList.Remove(item);
+                // ShapeList.Remove(item);
                 item.Selected = false;
             }
             Selection = new List<Shape>();
 
         }
 
+        public void GroupRemoveSelection()
+        {
 
+            if (Selection.Count < 1) return;
+
+            ShapeList.Remove(group);
+            //foreach (Shape item in Selection)
+            //{
+            //    ShapeList.Remove(item);
+
+            //}
+            Selection = new List<Shape>();
+        }
 
         public void SelectAll()
         {
-
             Selection = new List<Shape>(ShapeList);
-
-
             foreach (Shape item in Selection)
             {
                 ShapeList.Add(item);
@@ -300,22 +310,19 @@ namespace Draw
 
         public void DeleteAll()
         {
-            // if (Selection.Count < 1) return;
             Selection = new List<Shape>(ShapeList);
             foreach (Shape item in Selection)
             {
                 ShapeList.Remove(item);
-
             }
             Selection = new List<Shape>();
         }
 
         public void ScaleUp()
         {
-            //foreach (Shape item in group.SubItems)
             if (Selection != null)
             {
-                foreach (Shape item in selection)
+                foreach (Shape item in Selection)
                 {
                     item.Height = item.Height * 2;
                     item.Width = item.Width * 2;
@@ -326,11 +333,8 @@ namespace Draw
 
         public void ScaleDown()
         {
-
-            // foreach (Shape item in group.SubItems)
-            // if (Selection != null)
             {
-                foreach (Shape item in selection)
+                foreach (Shape item in Selection)
                 {
                     item.Height = item.Height / 2;
                     item.Width = item.Width / 2;
@@ -342,24 +346,49 @@ namespace Draw
         public void GroupScaleUp()
         {
             if (Selection.Count < 1) return;
-            foreach (Shape item in group.SubItems)
-            //foreach (Shape item in Selection)
+            try
             {
-                item.Height = item.Height * 2;
-                item.Width = item.Width * 2;
+                foreach (Shape item in group.SubItems)
+
+                {
+                    item.Height = item.Height * 2;
+                    item.Width = item.Width * 2;
+                    ShapeList.Remove(group);
+                    SelectAll();
+                    Group();
+                }
             }
+            catch (NullReferenceException ex)
+            {
+                // ScaleUp();
+                MessageBox.Show("Елемента не е групиран!!! \nПолзвайте бутона ScaleUP");
+                ex.Message.ToString();
+            }
+
         }
 
 
         public void GroupScaleDown()
         {
             if (Selection.Count < 1) return;
-            foreach (Shape item in group.SubItems)
-            //foreach (Shape item in Selection)
+            try
             {
-                item.Height = item.Height / 2;
-                item.Width = item.Width / 2;
+                foreach (Shape item in group.SubItems)
+                {
+                    item.Height = item.Height / 2;
+                    item.Width = item.Width / 2;
+                    ShapeList.Remove(group);
+                    SelectAll();
+                    Group();
+                }
             }
+            catch (NullReferenceException ex)
+            {
+                //ScaleDown();
+                MessageBox.Show("Елемента не е групиран!!!  \nПолзвайте бутона ScaleDown");
+                ex.Message.ToString();
+            }
+
         }
     }
 }

@@ -252,5 +252,12 @@ namespace Draw
             viewPort.Invalidate();
         }
 
+        private void GroupRemoveSelection_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.GroupRemoveSelection();
+            statusBar.Items[0].Text = "Последно действие: Размаркиране на група";
+
+            viewPort.Invalidate();
+        }
     }
 }
