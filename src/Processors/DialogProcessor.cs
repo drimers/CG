@@ -318,6 +318,61 @@ namespace Draw
             Selection = new List<Shape>();
         }
 
+        public void DeleteRectangle()
+        {
+            foreach (Shape item in Selection)
+            {
+                if (item.GetType() == typeof(RectangleShape))
+                    ShapeList.Remove(item);
+            }
+            Selection = new List<Shape>();
+        }
+
+
+
+        public void DeleteCircle()
+        {
+            foreach (Shape item in Selection)
+            {
+                if (item.GetType() == typeof(CircleShape))
+                    ShapeList.Remove(item);
+            }
+            Selection = new List<Shape>();
+        }
+
+
+        public void DeleteSquare()
+        {
+            foreach (Shape item in Selection)
+            {
+                if (item.GetType() == typeof(SquareShape))
+                    ShapeList.Remove(item);
+            }
+            Selection = new List<Shape>();
+        }
+
+        public void DeleteEllipse()
+        {
+            foreach (Shape item in Selection)
+            {
+                if (item.GetType() == typeof(EllipseShape))
+                    ShapeList.Remove(item);
+            }
+            Selection = new List<Shape>();
+        }
+
+
+        public void DeleteTriangle()
+        {
+            foreach (Shape item in Selection)
+            {
+                if (item.GetType() == typeof(TriangleShape))
+                    ShapeList.Remove(item);
+            }
+            Selection = new List<Shape>();
+        }
+
+
         public void ScaleUp()
         {
             if (Selection != null)

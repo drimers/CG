@@ -259,5 +259,49 @@ namespace Draw
 
             viewPort.Invalidate();
         }
+
+
+
+        private void delEllipseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.DeleteEllipse();
+            statusBar.Items[0].Text = "Последно действие: Изтриване на елипси";
+
+            viewPort.Invalidate();
+        }
+
+        private void delCircleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.DeleteCircle();
+            statusBar.Items[0].Text = "Последно действие: Изтриване на окръжности";
+
+            viewPort.Invalidate();
+        }
+
+        private void delTriangleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.DeleteTriangle();
+            statusBar.Items[0].Text = "Последно действие: Изтриване на триъгълници";
+
+            viewPort.Invalidate();
+        }
+
+        private void delSquareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.DeleteSquare();
+            statusBar.Items[0].Text = "Последно действие: Изтриване на квадрати";
+
+            viewPort.Invalidate();
+        }
+
+        private void delRectangleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.DeleteRectangle();
+            statusBar.Items[0].Text = "Последно действие: Изтриване на правоъгълник";
+
+            viewPort.Invalidate();
+        }
+
+
     }
 }

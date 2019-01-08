@@ -47,6 +47,11 @@
             this.squareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.delEllipseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.delCircleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.delTriangleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.delSquareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.delRectangleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar = new System.Windows.Forms.StatusStrip();
@@ -80,8 +85,8 @@
             this.DeleteAll = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.speedMenu = new System.Windows.Forms.ToolStrip();
-            this.viewPort = new Draw.DoubleBufferedPanel();
             this.GroupRemoveSelection = new System.Windows.Forms.ToolStripButton();
+            this.viewPort = new Draw.DoubleBufferedPanel();
             this.mainMenu.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.speedMenu.SuspendLayout();
@@ -212,8 +217,15 @@
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteAllToolStripMenuItem});
+            this.deleteAllToolStripMenuItem,
+            this.delEllipseToolStripMenuItem,
+            this.delCircleToolStripMenuItem,
+            this.delTriangleToolStripMenuItem,
+            this.delSquareToolStripMenuItem,
+            this.delRectangleToolStripMenuItem});
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt)
+            | System.Windows.Forms.Keys.E)));
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
@@ -221,9 +233,54 @@
             // 
             this.deleteAllToolStripMenuItem.Name = "deleteAllToolStripMenuItem";
             this.deleteAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.deleteAllToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.deleteAllToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
             this.deleteAllToolStripMenuItem.Text = "DeleteAll";
             this.deleteAllToolStripMenuItem.Click += new System.EventHandler(this.DeleteAll_Click);
+            // 
+            // delEllipseToolStripMenuItem
+            // 
+            this.delEllipseToolStripMenuItem.Name = "delEllipseToolStripMenuItem";
+            this.delEllipseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt)
+            | System.Windows.Forms.Keys.E)));
+            this.delEllipseToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.delEllipseToolStripMenuItem.Text = "Del. Ellipse";
+            this.delEllipseToolStripMenuItem.Click += new System.EventHandler(this.delEllipseToolStripMenuItem_Click);
+            // 
+            // delCircleToolStripMenuItem
+            // 
+            this.delCircleToolStripMenuItem.Name = "delCircleToolStripMenuItem";
+            this.delCircleToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt)
+            | System.Windows.Forms.Keys.C)));
+            this.delCircleToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.delCircleToolStripMenuItem.Text = "Del. Circle";
+            this.delCircleToolStripMenuItem.Click += new System.EventHandler(this.delCircleToolStripMenuItem_Click);
+            // 
+            // delTriangleToolStripMenuItem
+            // 
+            this.delTriangleToolStripMenuItem.Name = "delTriangleToolStripMenuItem";
+            this.delTriangleToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt)
+            | System.Windows.Forms.Keys.T)));
+            this.delTriangleToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.delTriangleToolStripMenuItem.Text = "Del. Triangle";
+            this.delTriangleToolStripMenuItem.Click += new System.EventHandler(this.delTriangleToolStripMenuItem_Click);
+            // 
+            // delSquareToolStripMenuItem
+            // 
+            this.delSquareToolStripMenuItem.Name = "delSquareToolStripMenuItem";
+            this.delSquareToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt)
+            | System.Windows.Forms.Keys.S)));
+            this.delSquareToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.delSquareToolStripMenuItem.Text = "Del. Square";
+            this.delSquareToolStripMenuItem.Click += new System.EventHandler(this.delSquareToolStripMenuItem_Click);
+            // 
+            // delRectangleToolStripMenuItem
+            // 
+            this.delRectangleToolStripMenuItem.Name = "delRectangleToolStripMenuItem";
+            this.delRectangleToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt)
+            | System.Windows.Forms.Keys.R)));
+            this.delRectangleToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.delRectangleToolStripMenuItem.Text = "Del. Rectangle";
+            this.delRectangleToolStripMenuItem.Click += new System.EventHandler(this.delRectangleToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -506,6 +563,16 @@
             this.speedMenu.TabIndex = 3;
             this.speedMenu.Text = "toolStrip1";
             // 
+            // GroupRemoveSelection
+            // 
+            this.GroupRemoveSelection.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.GroupRemoveSelection.Image = ((System.Drawing.Image)(resources.GetObject("GroupRemoveSelection.Image")));
+            this.GroupRemoveSelection.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.GroupRemoveSelection.Name = "GroupRemoveSelection";
+            this.GroupRemoveSelection.Size = new System.Drawing.Size(34, 34);
+            this.GroupRemoveSelection.Text = "GroupRemoveSelection";
+            this.GroupRemoveSelection.Click += new System.EventHandler(this.GroupRemoveSelection_Click);
+            // 
             // viewPort
             // 
             this.viewPort.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -517,16 +584,6 @@
             this.viewPort.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseDown);
             this.viewPort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseMove);
             this.viewPort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseUp);
-            // 
-            // GroupRemoveSelection
-            // 
-            this.GroupRemoveSelection.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.GroupRemoveSelection.Image = ((System.Drawing.Image)(resources.GetObject("GroupRemoveSelection.Image")));
-            this.GroupRemoveSelection.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.GroupRemoveSelection.Name = "GroupRemoveSelection";
-            this.GroupRemoveSelection.Size = new System.Drawing.Size(34, 34);
-            this.GroupRemoveSelection.Text = "GroupRemoveSelection";
-            this.GroupRemoveSelection.Click += new System.EventHandler(this.GroupRemoveSelection_Click);
             // 
             // MainForm
             // 
@@ -604,5 +661,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStrip speedMenu;
         private System.Windows.Forms.ToolStripButton GroupRemoveSelection;
+        private System.Windows.Forms.ToolStripMenuItem delEllipseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem delCircleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem delTriangleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem delSquareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem delRectangleToolStripMenuItem;
     }
 }
