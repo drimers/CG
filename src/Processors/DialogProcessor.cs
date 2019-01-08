@@ -290,13 +290,25 @@ namespace Draw
 
             if (Selection.Count < 1) return;
 
-            ShapeList.Remove(group);
-            //foreach (Shape item in Selection)
-            //{
-            //    ShapeList.Remove(item);
 
-            //}
-            Selection = new List<Shape>();
+            try
+            {
+                foreach (Shape item in group.SubItems)
+                {
+                    ShapeList.Remove(item);
+                    item.Selected = false;
+
+                    ShapeList.Remove(group);
+                    ShapeList.Add(item);
+                }
+                Selection = new List<Shape>();
+                //ShapeList.Remove(group);
+            }
+            catch (NullReferenceException ex)
+            {
+                RemoveSelection();
+                ex.Message.ToString();
+            }
         }
 
         public void SelectAll()
@@ -388,6 +400,7 @@ namespace Draw
 
         public void ScaleDown()
         {
+            if (Selection != null)
             {
                 foreach (Shape item in Selection)
                 {
