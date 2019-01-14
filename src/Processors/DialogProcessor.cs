@@ -210,6 +210,69 @@ namespace Draw
             }
         }
 
+
+        public void GroupBorderSizeUp()
+        {
+            if (Selection.Count < 1) return;
+            try
+            {
+                foreach (Shape item in group.SubItems)
+
+                {
+                    item.BorderSize += 2;
+                    ShapeList.Remove(group);
+                    SelectAll();
+                    Group();
+                }
+            }
+            catch (NullReferenceException ex)
+            {
+                BorderSizeUp();
+                ex.Message.ToString();
+            }
+
+        }
+
+
+        public void BorderSizeUp()
+        {
+            foreach (Shape item in Selection)
+            {
+                item.BorderSize += 2;
+            }
+        }
+
+
+        public void GroupBorderSizeDown()
+        {
+            if (Selection.Count < 1) return;
+            try
+            {
+                foreach (Shape item in group.SubItems)
+
+                {
+                    item.BorderSize -= 2;
+                    ShapeList.Remove(group);
+                    SelectAll();
+                    Group();
+                }
+            }
+            catch (NullReferenceException ex)
+            {
+                BorderSizeDown();
+                ex.Message.ToString();
+            }
+
+        }
+
+        public void BorderSizeDown()
+        {
+            foreach (Shape item in Selection)
+            {
+                item.BorderSize -= 2;
+            }
+        }
+
         public override void Draw(Graphics grfx)
         {
 
@@ -302,7 +365,7 @@ namespace Draw
                     ShapeList.Add(item);
                 }
                 Selection = new List<Shape>();
-                //ShapeList.Remove(group);
+
             }
             catch (NullReferenceException ex)
             {

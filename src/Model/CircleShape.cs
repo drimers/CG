@@ -54,7 +54,7 @@ namespace Draw
             base.DrawSelf(grfx);
 
             grfx.FillEllipse(new SolidBrush(FillColor), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
-            grfx.DrawEllipse(new Pen(BorderColor), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
+            grfx.DrawEllipse(new Pen(BorderColor, BorderSize), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
 
 
             //just for test (drawing Line)

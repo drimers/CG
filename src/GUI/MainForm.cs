@@ -302,6 +302,25 @@ namespace Draw
             viewPort.Invalidate();
         }
 
+        private void borderSizeUp_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.GroupBorderSizeUp();
+            statusBar.Items[0].Text = "Последно действие: Промяна дебелина на бордер";
 
+            viewPort.Invalidate();
+        }
+
+        private void borderSizeDown_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.GroupBorderSizeDown();
+            statusBar.Items[0].Text = "Последно действие: Промяна дебелина на бордер";
+
+            viewPort.Invalidate();
+        }
+
+        //private void borderSizeUp_Click(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }

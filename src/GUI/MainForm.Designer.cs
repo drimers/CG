@@ -86,6 +86,8 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.speedMenu = new System.Windows.Forms.ToolStrip();
             this.GroupRemoveSelection = new System.Windows.Forms.ToolStripButton();
+            this.borderSizeUp = new System.Windows.Forms.ToolStripButton();
+            this.borderSizeDown = new System.Windows.Forms.ToolStripButton();
             this.viewPort = new Draw.DoubleBufferedPanel();
             this.mainMenu.SuspendLayout();
             this.statusBar.SuspendLayout();
@@ -547,6 +549,8 @@
             this.GroupRemoveSelection,
             this.GroupScaleUp,
             this.GroupScaleDown,
+            this.borderSizeUp,
+            this.borderSizeDown,
             this.toolStripSeparator3,
             this.toolStripTextBox1,
             this.toolStripSeparator4,
@@ -572,6 +576,26 @@
             this.GroupRemoveSelection.Size = new System.Drawing.Size(34, 34);
             this.GroupRemoveSelection.Text = "GroupRemoveSelection";
             this.GroupRemoveSelection.Click += new System.EventHandler(this.GroupRemoveSelection_Click);
+            // 
+            // borderSizeUp
+            // 
+            this.borderSizeUp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.borderSizeUp.Image = ((System.Drawing.Image)(resources.GetObject("borderSizeUp.Image")));
+            this.borderSizeUp.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.borderSizeUp.Name = "borderSizeUp";
+            this.borderSizeUp.Size = new System.Drawing.Size(34, 34);
+            this.borderSizeUp.Text = "borderSizeUp";
+            this.borderSizeUp.Click += new System.EventHandler(this.borderSizeUp_Click);
+            // 
+            // borderSizeDown
+            // 
+            this.borderSizeDown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.borderSizeDown.Image = ((System.Drawing.Image)(resources.GetObject("borderSizeDown.Image")));
+            this.borderSizeDown.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.borderSizeDown.Name = "borderSizeDown";
+            this.borderSizeDown.Size = new System.Drawing.Size(34, 34);
+            this.borderSizeDown.Text = "borderSizeDown";
+            this.borderSizeDown.Click += new System.EventHandler(this.borderSizeDown_Click);
             // 
             // viewPort
             // 
@@ -666,5 +690,7 @@
         private System.Windows.Forms.ToolStripMenuItem delTriangleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem delSquareToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem delRectangleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton borderSizeUp;
+        private System.Windows.Forms.ToolStripButton borderSizeDown;
     }
 }

@@ -36,6 +36,8 @@ namespace Draw
             if (base.Contains(point))
                 // Проверка дали е в обекта само, ако точката е в обхващащия правоъгълник.
                 // В случая на правоъгълник - директно връщаме true
+
+
                 return true;
             else
                 // Ако не е в обхващащия правоъгълник, то неможе да е в обекта и => false
@@ -61,7 +63,7 @@ namespace Draw
 
             Point[] points = { top, right, left };
             grfx.FillPolygon(new SolidBrush(FillColor), points);
-            grfx.DrawPolygon(new Pen(BorderColor), points);
+            grfx.DrawPolygon(new Pen(BorderColor, BorderSize), points);
 
 
         }

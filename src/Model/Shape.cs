@@ -26,7 +26,7 @@ namespace Draw
             this.Width = shape.Width;
             this.Location = shape.Location;
             this.rectangle = shape.rectangle;
-
+            this.borderSize = shape.borderSize;
             this.FillColor = shape.FillColor;
         }
         #endregion
@@ -90,6 +90,13 @@ namespace Draw
             set { borderColor = value; }
         }
 
+
+        private float borderSize;
+        public float BorderSize
+        {
+            get { return borderSize; }
+            set { borderSize = value; }
+        }
 
         private bool selected;
         public bool Selected
