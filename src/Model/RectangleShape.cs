@@ -51,6 +51,10 @@ namespace Draw
             grfx.DrawRectangle(new Pen(BorderColor, BorderSize), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
 
 
+            FontFamily ff = new FontFamily("Arial");
+            System.Drawing.Font font = new System.Drawing.Font(ff, 15);
+            grfx.DrawString("Rectangle", font, new SolidBrush(Color.Black), Rectangle.X + 3, Rectangle.Y + 80);
+
 
             //grfx.FillRectangle(new SolidBrush(FillColor), 50, 150, 300, 500);
             //grfx.DrawRectangle(new Pen(BorderColor), 50, 150, 300, 500);

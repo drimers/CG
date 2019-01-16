@@ -67,7 +67,7 @@ namespace Draw
         {
 
             base.DrawSelf(grfx);
-            FontFamily ff = new FontFamily("Arial"); ;
+
             //Point top = new Point((int)Rectangle.X + (int)Rectangle.Width / 2, (int)Rectangle.Y);
             //Point right = new Point((int)Rectangle.X + (int)Rectangle.Width, (int)Rectangle.Y + (int)Rectangle.Height);
             //Point left = new Point((int)Rectangle.X, (int)Rectangle.Y + (int)Rectangle.Height);
@@ -76,11 +76,13 @@ namespace Draw
             right = new Point((int)Rectangle.X + (int)Rectangle.Width, (int)Rectangle.Y + (int)Rectangle.Height);
             left = new Point((int)Rectangle.X, (int)Rectangle.Y + (int)Rectangle.Height);
 
+
             Point[] points = { top, right, left };
             grfx.FillPolygon(new SolidBrush(FillColor), points);
             grfx.DrawPolygon(new Pen(BorderColor, BorderSize), points);
-            System.Drawing.Font font = new System.Drawing.Font(ff, 20);
 
+            FontFamily ff = new FontFamily("Arial");
+            System.Drawing.Font font = new System.Drawing.Font(ff, 20);
             grfx.DrawString("Triangle", font, new SolidBrush(Color.Black), Rectangle.X + 100, Rectangle.Y + 100);
 
         }

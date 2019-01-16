@@ -49,6 +49,9 @@ namespace Draw
             grfx.FillRectangle(new SolidBrush(FillColor), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
             grfx.DrawRectangle(new Pen(BorderColor, BorderSize), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
 
+            FontFamily ff = new FontFamily("Arial");
+            System.Drawing.Font font = new System.Drawing.Font(ff, 20);
+            grfx.DrawString("Square", font, new SolidBrush(Color.Black), Rectangle.X + 60, Rectangle.Y + 80);
         }
     }
 }

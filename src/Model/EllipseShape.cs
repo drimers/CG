@@ -57,6 +57,10 @@ namespace Draw
             grfx.FillEllipse(new SolidBrush(FillColor), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
             grfx.DrawEllipse(new Pen(BorderColor, BorderSize), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
 
+            FontFamily ff = new FontFamily("Arial");
+            System.Drawing.Font font = new System.Drawing.Font(ff, 20);
+            grfx.DrawString("Ellipse", font, new SolidBrush(Color.Black), Rectangle.X + 60, Rectangle.Y + 35);
+
         }
     }
 }

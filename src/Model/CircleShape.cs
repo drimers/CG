@@ -56,6 +56,9 @@ namespace Draw
             grfx.FillEllipse(new SolidBrush(FillColor), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
             grfx.DrawEllipse(new Pen(BorderColor, BorderSize), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
 
+            FontFamily ff = new FontFamily("Arial");
+            System.Drawing.Font font = new System.Drawing.Font(ff, 20);
+            grfx.DrawString("Circle", font, new SolidBrush(Color.Black), Rectangle.X + 65, Rectangle.Y + 85);
 
             //just for test (drawing Line)
             // grfx.DrawLine(new Pen(Color.Black), Rectangle.X, Rectangle.Y, Rectangle.X + Rectangle.Width - 100, Rectangle.Y + Rectangle.Height - 50);
