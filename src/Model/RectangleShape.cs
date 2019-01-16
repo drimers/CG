@@ -53,7 +53,7 @@ namespace Draw
 
             FontFamily ff = new FontFamily("Arial");
             System.Drawing.Font font = new System.Drawing.Font(ff, 15);
-            grfx.DrawString("Rectangle", font, new SolidBrush(Color.Black), Rectangle.X + 3, Rectangle.Y + 80);
+            grfx.DrawString("Rectangle", font, new SolidBrush(Color.Black), Rectangle.X + Rectangle.Width - 95, Rectangle.Y + Rectangle.Height - 120);
 
 
             //grfx.FillRectangle(new SolidBrush(FillColor), 50, 150, 300, 500);

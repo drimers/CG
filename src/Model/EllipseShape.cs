@@ -59,7 +59,7 @@ namespace Draw
 
             FontFamily ff = new FontFamily("Arial");
             System.Drawing.Font font = new System.Drawing.Font(ff, 20);
-            grfx.DrawString("Ellipse", font, new SolidBrush(Color.Black), Rectangle.X + 60, Rectangle.Y + 35);
+            grfx.DrawString("Ellipse", font, new SolidBrush(Color.Black), Rectangle.X + Rectangle.Width - 140, Rectangle.Y + Rectangle.Height - 80);
 
         }
     }

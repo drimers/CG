@@ -83,7 +83,7 @@ namespace Draw
 
             FontFamily ff = new FontFamily("Arial");
             System.Drawing.Font font = new System.Drawing.Font(ff, 20);
-            grfx.DrawString("Triangle", font, new SolidBrush(Color.Black), Rectangle.X + 100, Rectangle.Y + 100);
+            grfx.DrawString("Triangle", font, new SolidBrush(Color.Black), Rectangle.X + Rectangle.Width - 200, Rectangle.Y + Rectangle.Height - 50);
 
         }
     }
