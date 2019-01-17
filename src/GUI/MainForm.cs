@@ -318,9 +318,19 @@ namespace Draw
             viewPort.Invalidate();
         }
 
-        //private void borderSizeUp_Click(object sender, EventArgs e)
+        //private void groupToolStripMenuItem_Click(object sender, EventArgs e)
         //{
 
         //}
+
+
+
+        private void groupAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.Group();
+            statusBar.Items[0].Text = "Последно действие: Групиране на всички елементи";
+
+            viewPort.Invalidate();
+        }
     }
 }
