@@ -160,35 +160,16 @@ namespace Draw
         }
 
 
-        //Тая мацаница с тоя триъгълник трябва да я измисля
-        // Това е само за тест
-        // Голяма Боза стана
+
 
         public void AddRandomTriangle()
         {
             Random rnd = new Random();
             int x = rnd.Next(100, 1000);
             int y = rnd.Next(100, 600);
-            // int z = rnd.Next(300, 800);
 
-            //  TriangleShape elp = new TriangleShape(new Rectangle(x, y, 200, 100));
             TriangleShape triangle = new TriangleShape(new Rectangle(x, y, 300, 150));
-            //TriangleShape tri = new TriangleShape(new Rectangle(x, y, 200, 100));
-            // Point[] points = { new Point(x), new Point(y), new Point(z) };
-            // Rectangle rectangle = new Rectangle(x, y, 100, 100);
 
-            //    Point top = new Point(rectangle.Left + (rectangle.Width / 2), rectangle.Top);
-            //    Point right = new Point(rectangle.Left, rectangle.Bottom);
-            //    Point left = new Point(rectangle.Right, rectangle.Bottom);
-
-
-            //    ShapeList.AddPolygon(new Point[]
-            //{
-            //    top,
-            //    right,
-            //    left
-            //});
-            //    return ShapeList;
 
             triangle.FillColor = Color.Lime;
             triangle.BorderColor = Color.Red;
