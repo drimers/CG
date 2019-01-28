@@ -52,7 +52,7 @@ namespace Draw
 
 
 
-            // diagonali
+            //// diagonali
             //grfx.DrawLine(new Pen(new SolidBrush(Color.Black)), Rectangle.X, Rectangle.Y, Rectangle.X + Rectangle.Width, Rectangle.Y + Rectangle.Height);
             //grfx.DrawLine(new Pen(new SolidBrush(Color.Black)), Rectangle.X, Rectangle.Y + Rectangle.Height, Rectangle.X + Rectangle.Width, Rectangle.Y);
 
