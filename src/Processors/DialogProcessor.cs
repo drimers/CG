@@ -520,11 +520,11 @@ namespace Draw
                     minY = item.Location.Y;
                 if (maxX < item.Location.X + item.Width)
                     maxX = item.Location.X + item.Width;
-                // if (maxY < item.Location.Y + item.Height)
-                maxY = item.Location.Y + item.Height;
+                if (maxY < item.Location.Y + item.Height)
+                    maxY = item.Location.Y + item.Height;
             }
 
-            //GroupShape group = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
+            //GroupShape group1 = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
             group = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
             group.SubItems = Selection;
             Selection = new List<Shape>();
