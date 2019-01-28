@@ -56,14 +56,14 @@ namespace Draw
             grfx.FillEllipse(new SolidBrush(FillColor), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
             grfx.DrawEllipse(new Pen(BorderColor, BorderSize), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
 
-            //// |
-            /// / \
+            ////// |
+            ///// / \
             //PointF point = new PointF(Rectangle.X + Rectangle.Width / 2, Rectangle.Y + Rectangle.Height / 2);
             //grfx.DrawLine(new Pen(Color.Black), point, new PointF(Rectangle.X + Rectangle.Width / 2, Rectangle.Y));
-            //grfx.DrawLine(new Pen(Color.Black), point, new PointF(Rectangle.X + Rectangle.Width - 6, Rectangle.Y + Rectangle.Height - 70));
-            //grfx.DrawLine(new Pen(Color.Black), point, new PointF(Rectangle.X + 6, Rectangle.Y + Rectangle.Height - 70));
+            //grfx.DrawLine(new Pen(Color.Black), point, new PointF(Rectangle.X + Rectangle.Width - 20, Rectangle.Y + Rectangle.Height - 40));
+            //grfx.DrawLine(new Pen(Color.Black), point, new PointF(Rectangle.X + 20, Rectangle.Y + Rectangle.Height - 40));
 
-            //// |
+            ////// |
             //grfx.DrawLine(new Pen(new SolidBrush(Color.Black)), Rectangle.X + Height / 2, Rectangle.Y, Rectangle.X + Height / 2, Rectangle.Y + Width);
 
 
