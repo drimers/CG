@@ -181,7 +181,7 @@ namespace Draw
 
 
 
-        // end add from me
+
 
         internal void SetfillColor(Color color)
         {
@@ -201,10 +201,9 @@ namespace Draw
 
                 {
                     item.BorderSize += 2;
-                    ShapeList.Remove(group);
-                    SelectAll();
-                    Group();
+
                 }
+
             }
             catch (NullReferenceException ex)
             {
@@ -233,9 +232,6 @@ namespace Draw
 
                 {
                     item.BorderSize -= 2;
-                    ShapeList.Remove(group);
-                    SelectAll();
-                    Group();
                 }
             }
             catch (NullReferenceException ex)
@@ -253,18 +249,15 @@ namespace Draw
                 item.BorderSize -= 2;
             }
         }
-
+        // Graphics grfx;
         public override void Draw(Graphics grfx)
         {
-
-
             base.Draw(grfx);
             foreach (Shape item in Selection)
             {
-                grfx.DrawRectangle(Pens.Black, item.Location.X - 3,
-                    item.Location.Y - 3, item.Width + 6, item.Height + 6);
+                grfx.DrawRectangle(Pens.Black, item.Location.X - 2,
+                    item.Location.Y - 2, item.Width + 4, item.Height + 4);
             }
-
         }
 
         GroupShape group;
@@ -457,31 +450,33 @@ namespace Draw
             }
         }
 
-
         public void GroupScaleUp()
         {
             if (Selection.Count < 1) return;
             try
             {
                 foreach (Shape item in group.SubItems)
-
                 {
                     item.Height = item.Height * 2;
                     item.Width = item.Width * 2;
-                    ShapeList.Remove(group);
-                    SelectAll();
-                    Group();
+                    ShapeList.Remove(item);
+
+                    //Selection = new List<Shape>(ShapeList);
+                    Selection.Add(item);
+
+                    ShapeList.Add(item);
+                    // Group();
                 }
+                Group();
             }
             catch (NullReferenceException ex)
             {
                 ScaleUp();
-                //MessageBox.Show("Елемента не е групиран!!! \nПолзвайте бутона ScaleUP");
+                MessageBox.Show("Елемента не е групиран!!! \nПолзвайте бутона ScaleUP");
                 ex.Message.ToString();
             }
 
         }
-
 
         public void GroupScaleDown()
         {
@@ -490,20 +485,57 @@ namespace Draw
             {
                 foreach (Shape item in group.SubItems)
                 {
-                    item.Height = item.Height / 2;
-                    item.Width = item.Width / 2;
-                    ShapeList.Remove(group);
-                    SelectAll();
-                    Group();
+                    item.Height = (item.Height / 2);
+                    item.Width = (item.Width / 2);
+                    ShapeList.Remove(item);
+                    //Selection = new List<Shape>(ShapeList);
+                    Selection.Add(item);
+                    ShapeList.Add(item);
+                    //Group1();
                 }
+                Group1();
             }
             catch (NullReferenceException ex)
             {
                 ScaleDown();
-                //MessageBox.Show("Елемента не е групиран!!!  \nПолзвайте бутона ScaleDown");
+                MessageBox.Show("Елемента не е групиран!!!  \nПолзвайте бутона ScaleDown");
                 ex.Message.ToString();
             }
 
         }
+
+        public void Group1()
+        {
+            if (Selection.Count < 2) return;
+
+            float minX = float.PositiveInfinity;
+            float minY = float.PositiveInfinity;
+            float maxX = float.NegativeInfinity;
+            float maxY = float.NegativeInfinity;
+            foreach (Shape item in Selection)
+            {
+                if (minX > item.Location.X)
+                    minX = item.Location.X;
+                if (minY > item.Location.Y)
+                    minY = item.Location.Y;
+                if (maxX < item.Location.X + item.Width)
+                    maxX = item.Location.X + item.Width;
+                // if (maxY < item.Location.Y + item.Height)
+                maxY = item.Location.Y + item.Height;
+            }
+
+            //GroupShape group = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
+            group = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
+            group.SubItems = Selection;
+            Selection = new List<Shape>();
+            Selection.Add(group);
+            foreach (Shape item in group.SubItems)
+                ShapeList.Remove(item);
+
+
+            ShapeList.Add(group);
+
+        }
+
     }
 }
