@@ -51,6 +51,27 @@ namespace Draw
             grfx.DrawRectangle(new Pen(BorderColor, BorderSize), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
 
 
+
+            // diagonali
+            //grfx.DrawLine(new Pen(new SolidBrush(Color.Black)), Rectangle.X, Rectangle.Y, Rectangle.X + Rectangle.Width, Rectangle.Y + Rectangle.Height);
+            //grfx.DrawLine(new Pen(new SolidBrush(Color.Black)), Rectangle.X, Rectangle.Y + Rectangle.Height, Rectangle.X + Rectangle.Width, Rectangle.Y);
+
+
+
+            //// rotated 90
+            //grfx.FillRectangle(new SolidBrush(FillColor), Rectangle.X, Rectangle.Y, Rectangle.Height, Rectangle.Width);
+            //grfx.DrawRectangle(new Pen(BorderColor, BorderSize), Rectangle.X, Rectangle.Y, Rectangle.Height, Rectangle.Width);
+            ////  
+            ////  
+            ////  \/plik
+            //PointF point1 = new PointF(Rectangle.X + Rectangle.Width * 2, Rectangle.Y);
+            //grfx.DrawLine(new Pen(Color.Black), point1, new PointF(Rectangle.X + 100, Rectangle.Y + Rectangle.Height / 5));
+            //PointF point2 = new PointF(Rectangle.X, Rectangle.Y);
+            //grfx.DrawLine(new Pen(Color.Black), point2, new PointF(Rectangle.X + 100, Rectangle.Y + Rectangle.Height / 5));
+
+
+
+
             FontFamily ff = new FontFamily("Arial");
             System.Drawing.Font font = new System.Drawing.Font(ff, 15);
             grfx.DrawString("Rectangle", font, new SolidBrush(Color.Black), Rectangle.X + Rectangle.Width - 95, Rectangle.Y + Rectangle.Height - 120);
