@@ -318,6 +318,7 @@ namespace Draw
 
             foreach (Shape item in Selection)
             {
+
                 // ShapeList.Remove(item);
                 item.Selected = false;
             }
@@ -341,7 +342,7 @@ namespace Draw
                     ShapeList.Remove(group);
                     ShapeList.Add(item);
                 }
-                Selection = new List<Shape>();
+                Selection = new List<Shape>(ShapeList);
 
             }
             catch (NullReferenceException ex)
@@ -460,14 +461,15 @@ namespace Draw
                     item.Height = item.Height * 2;
                     item.Width = item.Width * 2;
                     ShapeList.Remove(item);
-
+                    ShapeList.Remove(group);
+                    // SelectAll();
                     //Selection = new List<Shape>(ShapeList);
                     Selection.Add(item);
 
-                    ShapeList.Add(item);
+                    //ShapeList.Add(item);
                     // Group();
                 }
-                Group();
+                Group1();
             }
             catch (NullReferenceException ex)
             {
@@ -488,9 +490,11 @@ namespace Draw
                     item.Height = (item.Height / 2);
                     item.Width = (item.Width / 2);
                     ShapeList.Remove(item);
+                    ShapeList.Remove(group);
                     //Selection = new List<Shape>(ShapeList);
+                    //  SelectAll();
                     Selection.Add(item);
-                    ShapeList.Add(item);
+                    // ShapeList.Add(item);
                     //Group1();
                 }
                 Group1();
@@ -518,10 +522,10 @@ namespace Draw
                     minX = item.Location.X;
                 if (minY > item.Location.Y)
                     minY = item.Location.Y;
-                if (maxX < item.Location.X + item.Width)
-                    maxX = item.Location.X + item.Width;
-                if (maxY < item.Location.Y + item.Height)
-                    maxY = item.Location.Y + item.Height;
+                //if (maxX > item.Location.X - item.Width)
+                maxX = item.Location.X + item.Width;
+                //if (maxY > item.Location.Y - item.Height)
+                maxY = item.Location.Y + item.Height;
             }
 
             //GroupShape group1 = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
