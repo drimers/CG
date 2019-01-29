@@ -49,6 +49,8 @@ namespace Draw
 
 
             grfx.FillRectangle(new SolidBrush(FillColor), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
+            // grfx.TranslateTransform(90, 100);
+            // grfx.RotateTransform(30.0F);
             grfx.DrawRectangle(new Pen(BorderColor, BorderSize), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
 
 
