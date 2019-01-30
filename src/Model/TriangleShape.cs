@@ -37,22 +37,22 @@ namespace Draw
         Point left;
 
 
-
         public override bool Contains(PointF point)
         {
             if (base.Contains(point))
 
                 // Проверка дали е в обекта само, ако точката е в обхващащия правоъгълник.
                 // В случая на правоъгълник - директно връщаме true
-                //top = new Point((int)Rectangle.X + (int)Rectangle.Width / 2, (int)Rectangle.Y);
-                //right = new Point((int)Rectangle.X + (int)Rectangle.Width, (int)Rectangle.Y + (int)Rectangle.Height);
-                //left = new Point((int)Rectangle.X, (int)Rectangle.Y + (int)Rectangle.Height);
 
 
-                //return (right.X == Math.Max(top.X, left.X) && right.X == Math.Min(top.X, left.X) &&
-                //      right.Y == Math.Max(top.Y, left.Y) && right.Y == Math.Min(top.Y, left.Y));
+                return ((((right.Y - top.Y) * (point.X - top.X) - (right.X - top.X) * (point.Y - top.Y)) /
+                ((left.Y - right.Y) * (point.X - right.X) - (left.X - right.X) * (point.Y - right.Y)) /
+                ((top.Y - left.Y) * (point.X - left.X) - (top.X - left.X) * (point.Y - left.Y))) <= 0);
 
-                return true;
+
+
+            //return true;
+
             else
                 // Ако не е в обхващащия правоъгълник, то неможе да е в обекта и => false
                 return false;
