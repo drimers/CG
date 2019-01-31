@@ -342,7 +342,7 @@ namespace Draw
                     ShapeList.Remove(group);
                     ShapeList.Add(item);
                 }
-                Selection = new List<Shape>(ShapeList);
+                Selection = new List<Shape>();
 
             }
             catch (NullReferenceException ex)
@@ -460,16 +460,18 @@ namespace Draw
                 {
                     item.Height = item.Height * 2;
                     item.Width = item.Width * 2;
-                    ShapeList.Remove(item);
+                    //ShapeList.Remove(item);
                     ShapeList.Remove(group);
-                    // SelectAll();
-                    //Selection = new List<Shape>(ShapeList);
-                    Selection.Add(item);
+                    //SelectAll();
 
-                    //ShapeList.Add(item);
-                    // Group();
+                    Selection = group.SubItems;
+                    //Selection = new List<Shape>(ShapeList);
+                    //Selection.Add(item);
+
+                    ShapeList.Add(item);
+                    Group();
                 }
-                Group1();
+
             }
             catch (NullReferenceException ex)
             {
@@ -489,15 +491,16 @@ namespace Draw
                 {
                     item.Height = (item.Height / 2);
                     item.Width = (item.Width / 2);
-                    ShapeList.Remove(item);
+                    // ShapeList.Remove(item);
                     ShapeList.Remove(group);
                     //Selection = new List<Shape>(ShapeList);
-                    //  SelectAll();
-                    Selection.Add(item);
-                    // ShapeList.Add(item);
-                    //Group1();
+                    //SelectAll();
+                    Selection = group.SubItems;
+                    // Selection.Add(item);
+                    ShapeList.Add(item);
+                    Group();
                 }
-                Group1();
+
             }
             catch (NullReferenceException ex)
             {
@@ -508,38 +511,6 @@ namespace Draw
 
         }
 
-        public void Group1()
-        {
-            if (Selection.Count < 2) return;
-
-            float minX = float.PositiveInfinity;
-            float minY = float.PositiveInfinity;
-            float maxX = float.NegativeInfinity;
-            float maxY = float.NegativeInfinity;
-            foreach (Shape item in Selection)
-            {
-                if (minX > item.Location.X)
-                    minX = item.Location.X;
-                if (minY > item.Location.Y)
-                    minY = item.Location.Y;
-                //if (maxX > item.Location.X - item.Width)
-                maxX = item.Location.X + item.Width;
-                //if (maxY > item.Location.Y - item.Height)
-                maxY = item.Location.Y + item.Height;
-            }
-
-            //GroupShape group1 = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
-            group = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
-            group.SubItems = Selection;
-            Selection = new List<Shape>();
-            Selection.Add(group);
-            foreach (Shape item in group.SubItems)
-                ShapeList.Remove(item);
-
-
-            ShapeList.Add(group);
-
-        }
 
     }
 }
