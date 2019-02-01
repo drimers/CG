@@ -432,8 +432,8 @@ namespace Draw
             {
                 foreach (Shape item in Selection)
                 {
-                    item.Height = item.Height * 2;
-                    item.Width = item.Width * 2;
+                    item.Height = item.Height * 1.5F;
+                    item.Width = item.Width * 1.5F;
                 }
             }
         }
@@ -445,8 +445,8 @@ namespace Draw
             {
                 foreach (Shape item in Selection)
                 {
-                    item.Height = item.Height / 2;
-                    item.Width = item.Width / 2;
+                    item.Height = item.Height / 1.5F;
+                    item.Width = item.Width / 1.5F;
                 }
             }
         }
@@ -458,8 +458,8 @@ namespace Draw
             {
                 foreach (Shape item in group.SubItems)
                 {
-                    item.Height = item.Height * 2;
-                    item.Width = item.Width * 2;
+                    item.Height = item.Height * 1.5F;
+                    item.Width = item.Width * 1.5F;
                     //ShapeList.Remove(item);
                     ShapeList.Remove(group);
                     //SelectAll();
@@ -489,8 +489,8 @@ namespace Draw
             {
                 foreach (Shape item in group.SubItems)
                 {
-                    item.Height = (item.Height / 2);
-                    item.Width = (item.Width / 2);
+                    item.Height = (item.Height / 1.5F);
+                    item.Width = (item.Width / 1.5F);
                     // ShapeList.Remove(item);
                     ShapeList.Remove(group);
                     //Selection = new List<Shape>(ShapeList);
