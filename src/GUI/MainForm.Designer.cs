@@ -46,6 +46,7 @@
             this.triangleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.squareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delEllipseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,8 +90,9 @@
             this.GroupRemoveSelection = new System.Windows.Forms.ToolStripButton();
             this.borderSizeUp = new System.Windows.Forms.ToolStripButton();
             this.borderSizeDown = new System.Windows.Forms.ToolStripButton();
+            this.BorderSizeUp1 = new System.Windows.Forms.ToolStripButton();
+            this.BorderSizeDown1 = new System.Windows.Forms.ToolStripButton();
             this.viewPort = new Draw.DoubleBufferedPanel();
-            this.groupAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.speedMenu.SuspendLayout();
@@ -108,7 +110,7 @@
             this.helpToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(892, 25);
+            this.mainMenu.Size = new System.Drawing.Size(992, 25);
             this.mainMenu.TabIndex = 1;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -227,6 +229,14 @@
             this.groupToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
             this.groupToolStripMenuItem.Text = "Group";
             // 
+            // groupAllToolStripMenuItem
+            // 
+            this.groupAllToolStripMenuItem.Name = "groupAllToolStripMenuItem";
+            this.groupAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.groupAllToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.groupAllToolStripMenuItem.Text = "GroupAll";
+            this.groupAllToolStripMenuItem.Click += new System.EventHandler(this.groupAllToolStripMenuItem_Click);
+            // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -315,7 +325,7 @@
             this.currentStatusLabel});
             this.statusBar.Location = new System.Drawing.Point(0, 651);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(892, 22);
+            this.statusBar.Size = new System.Drawing.Size(992, 22);
             this.statusBar.TabIndex = 2;
             this.statusBar.Text = "statusStrip1";
             // 
@@ -567,6 +577,8 @@
             this.toolStripSeparator4,
             this.ScaleUp,
             this.ScaleDown,
+            this.BorderSizeUp1,
+            this.BorderSizeDown1,
             this.toolStripSeparator6,
             this.SelectAll,
             this.RemoveSelection,
@@ -574,7 +586,7 @@
             this.toolStripSeparator5});
             this.speedMenu.Location = new System.Drawing.Point(0, 25);
             this.speedMenu.Name = "speedMenu";
-            this.speedMenu.Size = new System.Drawing.Size(892, 37);
+            this.speedMenu.Size = new System.Drawing.Size(992, 37);
             this.speedMenu.TabIndex = 3;
             this.speedMenu.Text = "toolStrip1";
             // 
@@ -608,32 +620,44 @@
             this.borderSizeDown.Text = "borderSizeDown";
             this.borderSizeDown.Click += new System.EventHandler(this.borderSizeDown_Click);
             // 
+            // BorderSizeUp1
+            // 
+            this.BorderSizeUp1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BorderSizeUp1.Image = ((System.Drawing.Image)(resources.GetObject("BorderSizeUp1.Image")));
+            this.BorderSizeUp1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BorderSizeUp1.Name = "BorderSizeUp1";
+            this.BorderSizeUp1.Size = new System.Drawing.Size(34, 34);
+            this.BorderSizeUp1.Text = "BorderSizeUp";
+            this.BorderSizeUp1.Click += new System.EventHandler(this.BorderSizeUp1_Click);
+            // 
+            // BorderSizeDown1
+            // 
+            this.BorderSizeDown1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BorderSizeDown1.Image = ((System.Drawing.Image)(resources.GetObject("BorderSizeDown1.Image")));
+            this.BorderSizeDown1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BorderSizeDown1.Name = "BorderSizeDown1";
+            this.BorderSizeDown1.Size = new System.Drawing.Size(34, 34);
+            this.BorderSizeDown1.Text = "BorderSizeDown";
+            this.BorderSizeDown1.Click += new System.EventHandler(this.BorderSizeDown1_Click);
+            // 
             // viewPort
             // 
             this.viewPort.Dock = System.Windows.Forms.DockStyle.Fill;
             this.viewPort.Location = new System.Drawing.Point(0, 62);
             this.viewPort.Name = "viewPort";
-            this.viewPort.Size = new System.Drawing.Size(892, 589);
+            this.viewPort.Size = new System.Drawing.Size(992, 589);
             this.viewPort.TabIndex = 4;
             this.viewPort.Paint += new System.Windows.Forms.PaintEventHandler(this.ViewPortPaint);
             this.viewPort.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseDown);
             this.viewPort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseMove);
             this.viewPort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseUp);
             // 
-            // groupAllToolStripMenuItem
-            // 
-            this.groupAllToolStripMenuItem.Name = "groupAllToolStripMenuItem";
-            this.groupAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.groupAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.groupAllToolStripMenuItem.Text = "GroupAll";
-            this.groupAllToolStripMenuItem.Click += new System.EventHandler(this.groupAllToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(892, 673);
+            this.ClientSize = new System.Drawing.Size(992, 673);
             this.Controls.Add(this.viewPort);
             this.Controls.Add(this.speedMenu);
             this.Controls.Add(this.statusBar);
@@ -715,5 +739,7 @@
         private System.Windows.Forms.ToolStripButton borderSizeDown;
         private System.Windows.Forms.ToolStripMenuItem groupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem groupAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton BorderSizeUp1;
+        private System.Windows.Forms.ToolStripButton BorderSizeDown1;
     }
 }

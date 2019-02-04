@@ -210,8 +210,9 @@ namespace Draw
                 BorderSizeUp();
                 ex.Message.ToString();
             }
-
         }
+
+
 
 
         public void BorderSizeUp()
@@ -281,11 +282,14 @@ namespace Draw
             // GroupShape group = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
             group = new GroupShape(new RectangleF(minX, minY, maxX - minX, maxY - minY));
             group.SubItems = Selection;
+
+            foreach (var item in Selection)
+            {
+                ShapeList.Remove(item);
+            }
+
             Selection = new List<Shape>();
             Selection.Add(group);
-            foreach (Shape item in group.SubItems)
-                ShapeList.Remove(item);
-
 
             ShapeList.Add(group);
 
@@ -318,12 +322,11 @@ namespace Draw
 
             foreach (Shape item in Selection)
             {
-
-                // ShapeList.Remove(item);
-                item.Selected = false;
+                Selection = new List<Shape>();
+                //ShapeList.Remove(item);
+                //item.Selected = false;
             }
-            Selection = new List<Shape>();
-
+            //Selection = new List<Shape>();
         }
 
         public void GroupRemoveSelection()
@@ -336,14 +339,14 @@ namespace Draw
             {
                 foreach (Shape item in group.SubItems)
                 {
-                    ShapeList.Remove(item);
-                    item.Selected = false;
+                    //ShapeList.Remove(item);
+                    //item.Selected = false;
 
                     ShapeList.Remove(group);
                     ShapeList.Add(item);
                 }
+                group.SubItems = new List<Shape>();
                 Selection = new List<Shape>();
-
             }
             catch (NullReferenceException ex)
             {
@@ -468,7 +471,7 @@ namespace Draw
                     //Selection = new List<Shape>(ShapeList);
                     //Selection.Add(item);
 
-                    ShapeList.Add(item);
+                    // ShapeList.Add(item);
                     Group();
                 }
 
@@ -497,7 +500,7 @@ namespace Draw
                     //SelectAll();
                     Selection = group.SubItems;
                     // Selection.Add(item);
-                    ShapeList.Add(item);
+                    // ShapeList.Add(item);
                     Group();
                 }
 
