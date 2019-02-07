@@ -479,7 +479,7 @@ namespace Draw
             catch (NullReferenceException ex)
             {
                 ScaleUp();
-                MessageBox.Show("Елемента не е групиран!!! \nПолзвайте бутона ScaleUP");
+                // MessageBox.Show("Елемента не е групиран!!! \nПолзвайте бутона ScaleUP");
                 ex.Message.ToString();
             }
 
@@ -508,7 +508,7 @@ namespace Draw
             catch (NullReferenceException ex)
             {
                 ScaleDown();
-                MessageBox.Show("Елемента не е групиран!!!  \nПолзвайте бутона ScaleDown");
+                // MessageBox.Show("Елемента не е групиран!!!  \nПолзвайте бутона ScaleDown");
                 ex.Message.ToString();
             }
 
