@@ -65,14 +65,23 @@ namespace Draw
             //grfx.FillRectangle(new SolidBrush(FillColor), Rectangle.X, Rectangle.Y, Rectangle.Height, Rectangle.Width);
             //grfx.DrawRectangle(new Pen(BorderColor, BorderSize), Rectangle.X, Rectangle.Y, Rectangle.Height, Rectangle.Width);
             ////  
-            ////  
-            ////  \/plik
+            ////  ne e dobre tova polzvai dolniq variqnt
+            ////  \/plik  
             //PointF point1 = new PointF(Rectangle.X + Rectangle.Width * 2, Rectangle.Y);
             //grfx.DrawLine(new Pen(Color.Black), point1, new PointF(Rectangle.X + 100, Rectangle.Y + Rectangle.Height / 5));
             //PointF point2 = new PointF(Rectangle.X, Rectangle.Y);
             //grfx.DrawLine(new Pen(Color.Black), point2, new PointF(Rectangle.X + 100, Rectangle.Y + Rectangle.Height / 5));
 
 
+
+            // za horizontalen pravoagalnik
+
+            //PointF point1 = new PointF(Rectangle.X + Rectangle.Width, Rectangle.Y);
+            //grfx.DrawLine(new Pen(Color.Black), point1, new PointF(Rectangle.X + Width / 2, Rectangle.Y + Rectangle.Height / 4));
+            //PointF point2 = new PointF(Rectangle.X, Rectangle.Y);
+            //grfx.DrawLine(new Pen(Color.Black), point2, new PointF(Rectangle.X + Width / 2, Rectangle.Y + Rectangle.Height / 4));
+            //PointF point3 = new PointF(Rectangle.X + Width / 2, Rectangle.Y + Rectangle.Height / 4);
+            //grfx.DrawLine(new Pen(Color.Black), point3, new PointF(Rectangle.X + Width / 2, Rectangle.Y + Rectangle.Height));
 
 
             FontFamily ff = new FontFamily("Arial");
